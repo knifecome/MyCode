@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title></title>
+    <script src="zepto.min.js"></script>
+    <script src="mediaquery2.js"></script>
+    <script src="swipe.js"></script>
+    <script src="myApp.js"></script>
+    <link rel="stylesheet" href="reset.css"/>
+    <style>
+        .swipe {
+            overflow: hidden;
+            visibility: hidden;
+            position: relative;
+        }
+        .swipe ul {
+            position: absolute;
+            margin-left: 50%;
+            bottom: 0.1rem;
+            transform: translate(-50%, 0);
+        }
+        .swipe ul li {
+            display: inline-block;
+            width: .1rem;
+            height: .1rem;
+            background-color: #ffffff;
+            border-radius: .05rem;
+        }
+        .swipe-wrap {
+            overflow: hidden;
+            position: relative;
+        }
+        .swipe-wrap > div {
+            float: left;
+            width: 100%;
+            position: relative;
+        }
+        .swipe-wrap img {
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+<section id='mySwipe' class='swipe'>
+    <div class='swipe-wrap'>
+        <div><img src="http://cdn.yihuzhijia.cn/t01393aabd2c961d7a3.jpg" alt=""></div>
+        <div><img src="http://cdn.yihuzhijia.cn/t01393aabd2c961d7a3.jpg" alt=""></div>
+        <div><img src="http://cdn.yihuzhijia.cn/t01393aabd2c961d7a3.jpg" alt=""></div>
+    </div>
+</section>
+</body>
+</html>

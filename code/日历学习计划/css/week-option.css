@@ -1,0 +1,191 @@
+.option {
+  position: relative;
+  height: 100%;
+}
+.option body {
+  position: relative;
+  height: 100%;
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+}
+.option body .swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.option body .swiper-container .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  top: 1.53rem;
+}
+.option body .swiper-container .slide1 {
+  display: block;
+}
+.option body .swiper-container .slide1 section {
+  width: 7.5rem;
+  height: 1.51rem;
+  background: #ffffff;
+  margin-bottom: .4rem;
+  padding: .26rem 0;
+  border-top: 1px solid #e4e4e4 ;
+  border-bottom: 1px solid #e4e4e4;
+}
+.option body .swiper-container .slide1 section p.time {
+  float: left;
+  height: 100%;
+  line-height: 1rem;
+  width: 1.7rem;
+  border-right: 1px solid #e1e1e1;
+  font-size: .48rem;
+  color: #4c4c4c;
+}
+.option body .swiper-container .slide1 section .jihua {
+  float: left;
+  width: 53%;
+}
+.option body .swiper-container .slide1 section .jihua div {
+  padding-top: .06rem;
+}
+.option body .swiper-container .slide1 section .jihua div p {
+  font-size: .36rem;
+  color: #4c4c4c;
+}
+.option body .swiper-container .slide1 section .jihua div span {
+  font-size: .22rem;
+  color: #4c4c4c;
+}
+.option body .swiper-container .slide1 section em {
+  float: left;
+  width: .4rem;
+  height: .4rem;
+  border-top: 1px solid #4c4c4c;
+  border-right: 1px solid #4c4c4c;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  margin-top: .28rem;
+  margin-left: .8rem;
+}
+.option body .swiper-container .slide2 {
+  display: block;
+}
+.option body .swiper-container .slide2 section {
+  width: 7.5rem;
+  height: 1.51rem;
+  background: #ffffff;
+  margin-bottom: .4rem;
+  padding: .26rem 0;
+  border-top: 1px solid #e4e4e4 ;
+  border-bottom: 1px solid #e4e4e4;
+}
+.option body .swiper-container .slide2 section p.time {
+  float: left;
+  height: 100%;
+  line-height: 1rem;
+  width: 1.7rem;
+  border-right: 1px solid #e1e1e1;
+  font-size: .48rem;
+  color: #4c4c4c;
+}
+.option body .swiper-container .slide2 section .jihua {
+  float: left;
+  width: 53%;
+}
+.option body .swiper-container .slide2 section .jihua div {
+  padding-top: .06rem;
+}
+.option body .swiper-container .slide2 section .jihua div p {
+  font-size: .36rem;
+  color: #4c4c4c;
+}
+.option body .swiper-container .slide2 section .jihua div span {
+  font-size: .22rem;
+  color: #4c4c4c;
+}
+.option body .swiper-container .slide2 section em {
+  float: left;
+  width: .4rem;
+  height: .4rem;
+  border-top: 1px solid #4c4c4c;
+  border-right: 1px solid #4c4c4c;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  margin-top: .28rem;
+  margin-left: .8rem;
+}
+.option body .swiper-container .slide3 {
+  background: blue;
+}
+.option body .swiper-container .swiper-pagination {
+  top: 0;
+  height: 1.53rem;
+  line-height: 1.53rem;
+}
+.option body .swiper-container .swiper-pagination .swiper-pagination-bullet {
+  width: 2.3rem;
+  height: .7rem;
+  line-height: .7rem;
+  border-radius: 0;
+  margin: 0;
+  background: transparent;
+  color: #4c4c4c;
+  opacity: 1;
+  border: 1px solid #ed7097;
+  margin-left: -1px;
+}
+.option body .swiper-container .swiper-pagination .swiper-pagination-bullet-active {
+  background: #ed7097;
+  color: #ffffff;
+}
+.option body footer {
+  position: absolute;
+  bottom: 0;
+  z-index: 999;
+  width: 7.5rem;
+  height: .96rem;
+  background: #ed7097;
+}
+.option body footer span {
+  float: left;
+  width: 1.1rem;
+  height: .96rem;
+  background: url("../img/clock.gif") no-repeat;
+  background-size: 1.1rem .96rem;
+}
+.option body footer div {
+  float: left;
+  width: 5.3rem;
+  height: .96rem;
+  line-height: .96rem;
+  text-align: center;
+  background: #ed7097;
+  color: #ffffff;
+  font-size: .3rem;
+}
+.option body footer em {
+  float: left;
+  width: 1.1rem;
+  height: .96rem;
+  background: url("../img/biji.gif") no-repeat;
+  background-size: 1.1rem .96rem;
+}

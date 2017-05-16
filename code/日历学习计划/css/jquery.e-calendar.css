@@ -1,0 +1,298 @@
+html{
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: '微软雅黑',Helvetica;
+    width: 100%;
+}
+
+.c-event-grid .c_title_sj {
+    background: #ED7097;
+    padding: 8px 15px;
+    color: #fff;
+}
+
+.top_calendar_div .c_years {
+    float: left;
+    padding: 5px 0;
+}
+
+.top_calendar_div select {
+    border: none;
+    font-size: .32rem;
+   /* padding: 0 5px 0 0;*/
+    background: #ffffff;
+}
+
+.top_calendar_div select option{
+    border: 0 none;
+}
+
+
+.top_calendar_div .c_months {
+    float: left;
+    margin-left: 42.5%;
+   /* padding: 5px 0;*/
+}
+
+.top_calendar_div .c_pages {
+   /* float: right;
+    padding: .3rem 0;*/
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-51%);
+    -moz-transform: translateX(-51%)
+    -ms-transform: translateX(-51%);
+    -o-transform: translateX(-51%);
+    transform: translateX(-51%);
+    width: 4rem;
+}
+
+.top_calendar_div .c_pages a {
+    /*padding: 25px 8px;*/
+   /* border: 1px solid #e6e6e6;*/
+    margin: 0.35rem 0.9rem;
+    display: inline-block;
+    height: .6rem;
+}
+.top_calendar_div .c_pages a img{
+    height: .28rem;
+}
+
+.top_calendar_div {
+    overflow: hidden;
+    padding: 0 .4rem;
+    border-bottom: 1px solid #cccccc;
+}
+
+.calendar * {
+    box-sizing: border-box;
+    /*font-family: Tahoma;*/
+    font-size: .32rem;
+    height: 1rem;
+}
+
+.calendar-sm {
+    cursor: default;
+    width: 800px;
+    height: 370px;
+}
+
+.calendar {
+    cursor: default;
+    margin: auto;
+    width: 7.5rem;
+    height: 6.7rem;
+}
+
+.calendar-sm .c-pad-top {
+    padding-top: 2%;
+}
+
+.c-event-grid .c-close-top {
+    float: right;
+    margin-top: -.8rem;
+    margin-right: 10px;
+    color:white;
+    font-weight: bold;
+    cursor:pointer;
+}
+
+.calendar .c-pad-top {
+   /* padding-top: 3%;*/
+}
+
+.c-grid {
+    box-shadow: 2px 2px 5px #888888;
+    height: inherit;
+}
+
+.c-day {
+    height: .7rem;
+    line-height: .7rem;
+    /*background-color: #EFF4F9;*/
+    float: left;
+    text-align: center;
+        /*border-top: 1px solid #e6e6e6;*/
+    width: 9.28%;
+    margin: 0 2.5%;
+}
+
+.c-day-previous-month {
+    width: 9.28%;
+    margin: 0 2.5%;
+    height: .7rem;
+    line-height: .7rem;
+    /*background-color: #F9FBFD;*/
+    float: left;
+    text-align: center;
+    /*color: gray;*/
+     color:#ccc;           
+      /*border-top: 1px solid #e6e6e6;*/
+}
+
+.c-day-next-month {
+    width: 9.28%;
+    margin: 0 2.5%;
+    height: .7rem;
+    line-height: .7rem;
+    /*background-color: #F9FBFD;*/
+    float: left;
+    text-align: center;
+    /*color: gray;*/
+     color:#ccc;
+    /*border-top: 1px solid #e6e6e6;*/
+}
+
+.c-week-day {
+    width: 9.28%;
+    margin: 3% 2.5% 1%;
+    /*height: 13.38%;*/
+    height: .7rem;
+    line-height: .7rem;
+    /*background-color: rgb(145, 172, 203);*/
+    background-color: #fff;
+    /*color: white;*/
+    float: left;
+    text-align: center;
+    /*font-weight: bold;*/
+    /*padding-top: 1%;*/
+}
+
+.c-next {
+    width: 12.5%;
+    height: 12%;
+    padding: 2% 2% 0 2%;
+    text-align: right;
+    cursor: pointer;
+    color: gray;
+}
+
+.c-previous {
+    width: 12.5%;
+    height: 12%;
+    padding: 2% 2% 0 2%;
+    text-align: left;
+    cursor: pointer;
+     color: gray;
+}
+
+.c-month {
+    width: 75%;
+    height: 12%;
+    text-align: center;
+    color: gray;
+    
+}
+
+.c-nav-btn-over {
+    background-color: rgb(137, 163, 192) !important;
+    font-weight: bold;
+}
+
+.c-today {
+    background-color: #F8C9D7;
+    border-radius: 50%;
+    border: 1px solid #ED7097;
+}
+
+.c-event {
+    /*background-color: rgb(166, 166, 166);*/
+   /* background-color: #89cbeb;*/
+    color: #000000;
+    font-weight: bold;
+    cursor: pointer;
+    border-bottom: 3px solid #F8C9D7;
+}
+
+.c-grid {
+    /*float: left;*/
+    width: 100%;
+}
+
+.c-event-grid {
+    margin-left: 1px;
+    height: inherit;
+    width: 100%;
+    /*float: left;*/
+    box-shadow: 2px 2px 5px #888888;
+}
+
+.c-event-grid img{
+    width: .5rem;
+    height: .5rem;
+}
+
+.c-grid-title {
+    font-weight: bold;
+    float: left;
+    background-color: #fff;
+    /*color: white;*/
+}
+
+.c-event-title {
+    width: 100%;
+    height: 12%;
+    text-align: center;
+    font-weight: bold;
+    background-color: rgb(135, 155, 188);
+    color: white;
+}
+
+.c-event-body {
+    background-color: #EFF4F9;
+    height: 88.1%;
+}
+
+.c-event-list {
+    overflow: auto;
+    height: 95%;
+    background-color: #fff;
+    width: 100%;
+}
+
+.c-event-item > .title {
+    font-weight: bold;
+}
+
+.c-event-item > div {
+    text-overflow: ellipsis;
+    width: inherit;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.c-event-item {
+    /*cursor: pointer;
+    display: none;
+    padding-left: 10px;
+    margin-bottom: 10px;*/
+    height: auto;
+    cursor: pointer;
+    display: none;
+    background: #f7f7f7;
+    color: #333;
+    padding: 10px 15px;
+    margin: 0 0 5px 0;
+}
+
+.c-event-over {
+    display: block;
+    /*background-color: lightgray;*/
+    /*background-color: #57b5e3;*/
+    font-weight: bold;
+    color: black;
+}
+
+.c-event-over-item {
+    background-color: lightgray;
+    /*background-color: #3ecdf1!important;*/
+}
+
+.c-event-over > .description {
+    font-weight: normal;
+}

@@ -1,0 +1,49 @@
+@ff1:"Microsoft Yahei Light";
+@ff2:"Microsoft Yahei";
+@color1:#a1a1a1;
+@color2:#e1e1e1;
+@color3:#e34b28;
+@color4:#4c4c4c;
+.pay-success{
+    .sucess-logo{
+      height: 3.82rem;
+      background: url("../images/pay-success.png") no-repeat center .6rem;
+      background-size: 1.6rem;
+      border-bottom: 1px solid @color2;
+      p{
+        padding-top: 2.3rem;
+        line-height: 1.52rem;
+        text-align: center;
+        font-size: .32rem;
+        color: rgb(76, 76, 76);
+        font-family: @ff1;
+      }
+    }
+  .sucess-logo.fail{
+    background: url("../images/pay-fail.png") no-repeat center .6rem;
+    background-size: 1.6rem;
+  }
+    .query{
+      padding-top:.4rem ;
+      padding-left: .54rem;
+      a{
+        color: rgb(161, 161, 161);
+        display: inline-block;
+        border: 1px solid @color2;
+        border-radius: 8px;
+        width: 3rem;
+        height: .68rem;
+        line-height: .68rem;
+        text-align: center;
+        font-size: .3rem;
+        font-family: @ff2;
+        color: rgb(161, 161, 161);
+      }
+      a:nth-of-type(1){
+        margin-right: .4rem;
+      }
+      a.check{
+        color: #ffffff;background: #ED7097;
+      }
+    }
+}

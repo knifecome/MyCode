@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" class="classmate">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta  name="format-detection" content="telephone=no,email=no,adress=no"/>
+    <title>领取</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/lingqu.css"/>
+    <script src="js/mediaquery2.js"></script>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/underscore.js"></script>
+</head>
+<body>
+<script type="text/template" id="moban1">
+    <h3 id="Tname">{{nickname}}</h3>
+    <img src="{{avatar}}" alt="" id="touxaing">
+    <span id="qq">QQ:{{qq}}</span>
+    <em id="tel">TEL:{{telephone}}</em>
+    <p id="Cname">{{student}}</p>
+
+</script>
+
+<a href="javascript:;" class="djlq"></a>
+
+<!--小菊花-->
+<section class="loading-modal"></section>
+<section class="loading"></section>
+</body>
+</html>
+<script>
+    $(function(){
+        var url = location.href;
+        var userId = url.split("?")[1];
+        $.ajax({
+            url : 'http://192.168.0.76:8080/teacher/show',
+            type : 'get',
+            async : true,
+            data : {userId : userId},
+            dataType : 'json',
+            success : function(data){
+                console.log(data);
+                var avatar = data.value.avatar;
+                var nickname = data.value.nickname;
+                var student = data.value.student;
+                var telephone = data.value.telephone;
+                var qq = data.value.qq[0];
+
+
+                var templateString1 = document.getElementById("moban1").innerHTML;
+                _.templateSettings = {
+
+                    interpolate : /\{\{(.+?)\}\}/g
+
+                };
+                var dictionary1 = {
+                    "avatar" : avatar,
+                    "nickname" : nickname,
+                    "student" :student,
+                    "telephone" :telephone,
+                    "qq" : qq
+                };
+
+                var compiled = _.template(templateString1);
+                var compiledString = compiled(dictionary1);
+                $('body').append(compiledString);
+            },
+            //小菊花
+            beforeSend: function(){
+                showloading()
+            },
+            complete:function(){
+                hideloading();
+            }
+        });
+
+        /*弹出小菊花*/
+        function showloading(){
+            $('.loading-modal').css('display',"block");
+            $('.loading').css('display',"block");
+        }
+
+        /*隐藏小菊花*/
+        function hideloading(){
+            $('.loading-modal').css('display',"none");
+            $('.loading').css('display',"none");
+        }
+    })
+</script>

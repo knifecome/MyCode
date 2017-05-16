@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" class="baoming">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/success.css"/>
+    <script src="js/mediaquery2.js"></script>
+    <script src="js/zepto.min.js"></script>
+    <title>成功</title>
+</head>
+<body>
+<a href="javascript:;" id="baoming"></a>
+<section class="modal-wrap"></section>
+<section class="modal">
+    <a href="javascript:;" id="unlock"></a>
+</section>
+<section class="modal2">
+    <a href="javascript:;" id="unlock2"></a>
+</section>
+</body>
+</html>
+<script>
+    $(function(){
+        $("#baoming").on("touchend",function(e){
+            e.stopPropagation();
+            $(".modal-wrap").css("display","block");
+            //$(".modal").css("display","block");
+            $(".modal2").css("display","block");
+
+        });
+
+        $(document).on("touchend",function(e){
+            e.stopPropagation();
+           /* var targetId = e.target.id;
+            console.log(targetId);
+            if(targetId == ""){
+                $(".modal-wrap").css("display","none");
+                //$(".modal").css("display","none");
+                $(".modal2").css("display","none");
+            }*/
+            $(".modal-wrap").css("display","none");
+            //$(".modal").css("display","none");
+            $(".modal2").css("display","none");
+        })
+
+        $("#unlock").on("touchend",function(e){
+            e.stopPropagation();
+            location.href = "http://www.baidu.com"
+        })
+    });
+
+</script>

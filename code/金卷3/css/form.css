@@ -1,0 +1,282 @@
+.invite-form {
+  height: 100%;
+}
+.invite-form body {
+  height: 13.34rem;
+  /*height: 100%;*/
+  width: 7.5rem;
+  background: url("../images/bg.gif") no-repeat #F3F4F7;
+  background-size: 7.5rem auto;
+  border: 1px solid transparent;
+}
+.invite-form body .longbox {
+  margin-top: 5.79rem;
+}
+.invite-form body .longbox .h1 {
+  width: 6.23rem;
+  height: 4.8rem;
+  background: url("../images/xf.png") no-repeat;
+  background-size: 6.23rem auto;
+  margin: 0 auto;
+  font-size: .24rem;
+  color: #4C4C4C;
+}
+.invite-form body .longbox .h1 div {
+  margin-left: .5rem;
+  width: 4.87rem;
+  height: 2.89rem;
+  background: url("../images/touxiang.png") no-repeat;
+  background-size: 4.87rem auto;
+}
+.invite-form body .longbox .h1 div .reg {
+  color: #4C4C4C;
+  font-size: .24rem;
+  padding-top: .2rem;
+  padding-bottom: .1rem;
+}
+.invite-form body .longbox .h1 div .touxiang {
+  overflow: hidden;
+}
+.invite-form body .longbox .h1 div .touxiang p {
+  float: left;
+  margin: 0 .12rem;
+  padding-bottom: .1rem;
+}
+.invite-form body .longbox .h1 div .touxiang p span {
+  display: inline-block;
+  width: .72rem;
+  height: .72rem;
+  background: url("../images/ren.png") no-repeat;
+  background-size: .72rem auto;
+}
+.invite-form body .longbox .h1 div .touxiang p span.active {
+  background: url("../images/ren2.png") no-repeat;
+  background-size: .72rem auto;
+}
+.invite-form body .longbox .h1 div .touxiang p em {
+  display: block;
+  font-size: .18rem;
+  color: #4C4C4C;
+  width: .72rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.invite-form body .longbox h2 {
+  width: 6.23rem;
+  height: 4.8rem;
+  background: url("../images/xf.png") no-repeat;
+  background-size: 6.23rem auto;
+  margin: 0 auto;
+  font-size: .24rem;
+  color: #4C4C4C;
+}
+.invite-form body .longbox h2 p {
+  margin-left: .5rem;
+  width: 4.87rem;
+  height: 2.89rem;
+  background: url("../images/touxiang.png") no-repeat;
+  background-size: 4.87rem auto;
+}
+.invite-form body .longbox h2 p .register {
+  display: block;
+  color: #4C4C4C;
+  padding-top: .2rem;
+  font-size: .24rem;
+}
+.invite-form body .longbox h2 p .touxaing {
+  display: block;
+}
+.invite-form body .longbox h2 .word {
+  width: 2.9rem;
+  margin-left: 1.3rem;
+  padding-top: .3rem;
+}
+.invite-form body .longbox h2 .word .shuzi {
+  font-size: .26rem;
+  color: #f1c600;
+}
+.invite-form body .longbox h2 .baoming {
+  width: 3.25rem;
+  padding-top: .18rem;
+}
+.invite-form body .longbox h3 {
+  padding-bottom: .2rem;
+  line-height: .3rem;
+  font-size: .3rem;
+  color: #520412;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.invite-form body .longbox h3 em {
+  font-size: .34rem;
+  font-weight: bold;
+}
+.invite-form body .longbox p {
+  line-height: .3rem;
+  font-size: .3rem;
+  color: #709FED;
+  padding-bottom: .64rem;
+  text-align: center;
+}
+.invite-form body .longbox form {
+  margin: 0 1.1rem;
+  position: relative;
+}
+.invite-form body .longbox form .text1 {
+  display: block;
+  width: 4.87rem;
+  height: .9rem;
+  background: url("../images/shuru.png") no-repeat;
+  background-size: 4.87rem .9rem;
+  color: #989898;
+  font-size: .24rem;
+  padding-left: .3rem;
+  margin-bottom: .5rem;
+}
+.invite-form body .longbox form .invite {
+  width: 4.87rem;
+  height: 1.67rem;
+  background: url("../images/tixing.png") no-repeat;
+  background-size: 4.87rem auto;
+  font-size: .24rem;
+  margin-bottom: .5rem;
+  margin-top: -1rem;
+}
+.invite-form body .longbox form .invite p {
+  width: 3.8rem;
+  color: #4C4C4C;
+  margin: 0 auto;
+  padding-top: .4rem;
+  line-height: .44rem;
+}
+.invite-form body .longbox form .alert {
+  display: none;
+  width: 4.87rem;
+  height: 1.67rem;
+  background: url("../images/tixing.png") no-repeat;
+  background-size: 4.87rem auto;
+  font-size: .24rem;
+  margin-bottom: .5rem;
+  margin-top: -1rem;
+}
+.invite-form body .longbox form .alert p {
+  width: 3.6rem;
+  color: #4C4C4C;
+  margin: 0 auto;
+  padding-top: .4rem;
+  line-height: .44rem;
+}
+.invite-form body .longbox form .text2 {
+  width: 2.46rem;
+  height: .75rem;
+  border: 3px solid #520412;
+  -webkit-border-radius: 35px;
+  -moz-border-radius: 35px;
+  border-radius: 35px;
+  padding-left: .33rem;
+  color: #848484;
+  font-size: .3rem;
+}
+.invite-form body .longbox form .query {
+  width: 2.46rem;
+  height: .75rem;
+  -webkit-border-radius: 35px;
+  -moz-border-radius: 35px;
+  border-radius: 35px;
+  color: #520412;
+  background: #F6BC2B;
+  font-size: .3rem;
+  font-weight: bold;
+  border: 3px solid #520412;
+}
+.invite-form body .longbox form #pw {
+  width: 100%;
+  height: .75rem;
+  border: 3px solid #520412;
+  -webkit-border-radius: 35px;
+  -moz-border-radius: 35px;
+  border-radius: 35px;
+  padding-left: .8rem;
+  background: url("../images/copy.png") no-repeat 0.3rem center;
+  background-size: .27rem auto;
+  margin: .2rem 0 .3rem;
+  color: #848484;
+  font-size: .3rem;
+}
+.invite-form body .longbox form .yiwen {
+  padding-bottom: .3rem;
+  color: #520412;
+}
+.invite-form body .longbox form .login {
+  width: 4.87rem;
+  height: .9rem;
+  background: url("../images/anniu.png") no-repeat;
+  background-size: 4.87rem auto;
+  font-size: .28rem;
+  color: #ffffff;
+}
+.invite-form body .longbox form .shouzhi {
+  position: absolute;
+  right: .4rem;
+  bottom: .4rem;
+  width: .88rem;
+  height: .71rem;
+  background: url("../images/shouzhi.gif") no-repeat;
+  background-size: .88rem auto;
+}
+.invite-form body .modal-wrap {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+.invite-form body .modal {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 6rem;
+  height: 3rem;
+  background: #ffffff;
+  text-align: center;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+}
+.invite-form body .modal p:nth-of-type(1) {
+  font-size: .36rem;
+  line-height: .8rem;
+}
+.invite-form body .modal p:nth-of-type(2) {
+  font-size: .32rem;
+  line-height: 1.2rem;
+  border-bottom: 1px solid #e1e1e1;
+}
+.invite-form body .modal p:nth-of-type(3) {
+  font-size: .36rem;
+  line-height: 1rem;
+}
+.invite-form body .noInternet {
+  display: none;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1rem;
+  line-height: 1rem;
+  padding-left: .2rem;
+  background: #ED7097;
+  color: #ffffff;
+  font-size: .30rem;
+}

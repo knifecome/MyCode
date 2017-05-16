@@ -1,0 +1,146 @@
+.option{
+  position: relative;
+  height: 100%;
+  body{
+    position: relative;
+    height: 100%;
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color:#000;
+    .swiper-container{
+      width: 100%;
+      height: 100%;
+      .swiper-slide{
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        top: 1.53rem;
+      }
+      .slide1{
+        display: block;
+        section{
+          width: 7.5rem;
+          height: 1.51rem;
+          background: #ffffff;
+          margin-bottom: .4rem;
+          padding: .26rem 0;
+          border-top:1px solid #e4e4e4 ;
+          border-bottom: 1px solid #e4e4e4;
+          p.time{
+            float: left;
+            height: 100%;
+            line-height: 1rem;
+            width: 1.7rem;
+            border-right: 1px solid #e1e1e1;
+            font-size: .48rem;
+            color: #4c4c4c;
+          }
+          .jihua{
+            float: left;
+            width: 53%;
+            div{
+              padding-top: .06rem;
+              p{
+                font-size: .36rem;
+                color: #4c4c4c;
+              }
+              span{
+                font-size: .22rem;
+                color: #4c4c4c;
+              }
+            }
+
+          }
+          em{
+            float: left;
+            width: .4rem;
+            height: .4rem;
+            border-top: 1px solid #4c4c4c;
+            border-right: 1px solid #4c4c4c;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+            margin-top: .28rem;
+            margin-left: .8rem;
+          }
+        }
+      }
+      .slide2{
+        background: yellow;
+      }
+      .slide3{
+        background: blue;
+      }
+      .swiper-pagination{
+        top: 0;
+        height: 1.53rem;
+        line-height: 1.53rem;
+        .swiper-pagination-bullet{
+          width: 2.3rem;
+          height: .7rem;
+          line-height: .7rem;
+          border-radius: 0;
+          margin: 0;
+          background: transparent;
+          color: #4c4c4c;
+          opacity: 1;
+          border: 1px solid #ed7097;
+          margin-left: -1px;
+        }
+        .swiper-pagination-bullet-active{
+          background: #ed7097;
+          color: #ffffff;
+        }
+      }
+    }
+    footer{
+      position: absolute;
+      bottom: 0;
+      z-index: 999;
+      width: 7.5rem;
+      height: .96rem;
+      background: #ed7097;
+      span{
+        float: left;
+        width: 1.1rem;
+        height: .96rem;
+        background: url("../img/clock.gif") no-repeat;
+        background-size: 1.1rem .96rem;
+      }
+      div{
+        float: left;
+        width: 5.3rem;
+        height: .96rem;
+        line-height: .96rem;
+        text-align: center;
+        background: #ed7097;
+        color: #ffffff;
+        font-size: .3rem;
+      }
+      em{
+        float: left;
+        width: 1.1rem;
+        height: .96rem;
+        background: url("../img/biji.gif") no-repeat;
+        background-size: 1.1rem .96rem;
+
+      }
+    }
+  }
+}

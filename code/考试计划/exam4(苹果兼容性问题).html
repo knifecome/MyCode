@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" class="kaoshi-exam">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>考试界面4</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/exam4.css"/>
+
+    <script src="js/mediaquery2.js"></script>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/touch.js"></script>
+   <!-- <script src="js/myApp.js"></script>-->
+    <!--<script src="js/jquery-1.12.3.min.js"></script>-->
+    <script src="js/underscore.js"></script>
+    <script src="js/selector.js"></script>
+    <script src="js/swipe.js"></script>
+
+</head>
+<style>
+    .swipe {
+        overflow: hidden;
+        visibility: hidden;
+        position: relative;
+    }
+    .swipe ul {
+        position: absolute;
+        margin-left: 50%;
+        bottom: 0.1rem;
+        transform: translate(-50%, 0);
+    }
+    .swipe ul li {
+        display: inline-block;
+        width: .1rem;
+        height: .1rem;
+        background-color: #ffffff;
+        border-radius: .05rem;
+    }
+    .swipe-wrap {
+        overflow: hidden;
+        position: relative;
+    }
+    .swipe-wrap > div {
+        float: left;
+        width: 100%;
+        position: relative;
+    }
+    .swipe-wrap .ebox {
+        width: 100%;
+    }
+</style>
+<body>
+<header class="header flex sb ac">
+    <span>单选</span>
+    <span><em class="ordernum">1</em>/<i class="totalnum"></i></span>
+</header>
+<section id='mySwipe' class='swipe'>
+    <div class='swipe-wrap' id="slide">
+
+    </div>
+</section>
+<footer class="footer">
+    <span id="time"><em></em><em></em>:<em></em><em></em>:<em></em><em></em></span>
+    <span id="submit">提交</span>
+</footer>
+<script type="text/template" id="moban1">
+    <section class="title">
+        <div>{{question}}</div>
+        <span></span>
+    </section>
+</script>
+<script type="text/template" id="moban2">
+    <section class="content">
+        <div class="flex content-wrap">
+            <input type="radio" id="{{blur}}" name="{{sort}}"><span>{{label}}</span><label
+                for="{{blur}}">{{content}}</label>
+        </div>
+    </section>
+</script>
+</body>
+</html>
+<script>
+    $(function(){
+        //倒计时
+        var time=document.getElementById('time');
+        var ems=time.getElementsByTagName('em');
+        var number=1.5*60*60;    //90分钟倒计时
+        var targettime=0;
+        var timer=setInterval(countdown,1000);
+        var totalnum=0;
+        var arr_answer = [];   //每道题的答案按顺序组成的数组
+        var arr_subchapter = [];  //存贮每一道题所属章节
+        var arr_subchapter2 = [];  //复制arr_subchapter数组内容
+        var arr_answeroption = []; //存储答案
+        var arr_order = [];     //存贮每一道题正确答案的下标
+        var count = 1;
+        var yuansu = new Array();//存放数组array的不重复的元素比如{4,5,7,8,2,67,89,}
+        var sum = new Array(); //存放数组array中每个不同元素的出现的次数
+        var obj_chapter = {};  //章节分类
+        var obj_wrongchapter = {};
+        var importantcount=0;
+        var secondarycount = 0;
+        var basiccount = 0;
+        var arrrate=[];     //错误率
+        countdown();
+
+        function countdown(){
+            number--;
+            if(number<0)
+            {
+                clearInterval(timer);
+                return;
+            }
+            var hour=parseInt(number/60/60);   //时
+            var minute=parseInt(number/60)%60; //分
+            var second=number%60;              //秒
+
+            ems[0].innerHTML=parseInt(hour/10);
+            ems[1].innerHTML=hour%10;
+            ems[2].innerHTML=parseInt(minute/10);
+            ems[3].innerHTML=minute%10;
+            ems[4].innerHTML=parseInt(second/10);
+            ems[5].innerHTML=second%10;
+        }
+
+        $.ajax({
+            url : 'http://cdn.yihuzhijia.cn/pan/f6d4f354c95645b38919967e49290ba6.json',
+            type : 'get',
+            async : false,
+            dataType : 'json',
+            success : function(data){
+                //console.log(data);
+                totalnum = data.value.panQuestions.length;
+                $('.totalnum').html(totalnum );
+                for(var i=0;i<data.value.panQuestions.length;i++){
+                    //console.log(data.value.panQuestions[i].answer);
+                    arr_answer.push(data.value.panQuestions[i].answer);
+                    arr_subchapter.push(data.value.panQuestions[i].subChapterId);
+                    arr_answeroption.push(data.value.panQuestions[i].answers);
+                    var dictionarty1 = data.value.panQuestions[i];
+                    var templateString1 = document.getElementById("moban1").innerHTML;
+                    _.templateSettings = {
+                        interpolate : /\{\{(.+?)\}\}/g
+                    };
+                    var compiled1 = _.template(templateString1);
+                    var compiledString1 = compiled1(dictionarty1);
+                    //console.log(compiledString1);
+                    $('#slide').append('<div class="ebox"></div>');
+                    //插入隐藏属性，也可以用自定义属性代替
+                    //var $tag = $('<input type="hidden">');
+                    //$('.ebox').eq(i).append($tag);
+                    //$('input[type="hidden"]').eq(i).val(i);
+                    $('.ebox').eq(i).append(compiledString1);
+
+                    for(var j=0;j<data.value.panQuestions[i].answers.length;j++){
+                        var dictionary2 = data.value.panQuestions[i].answers[j];
+                        //console.log(dictionary2);
+                        var templateString2 = document.getElementById("moban2").innerHTML;
+                        _.templateSettings = {
+                            interpolate : /\{\{(.+?)\}\}/g
+                        };
+                        var compiled2 = _.template(templateString2);
+                        var compiledString2 = compiled2(dictionary2);
+                        //console.log(compiledString2);
+                        $('.ebox').eq(i).append(compiledString2);
+                    }
+                }
+                //console.log(arr_answer);
+                //console.log(arr_subchapter);
+                //复制
+                for(var k=0;k<arr_subchapter.length;k++){
+                    arr_subchapter2[k] = arr_subchapter[k];
+                }
+
+                //console.log(arr_subchapter2);
+                for (var p = 0; p < arr_subchapter.length;p++) {
+                    for(var q=p+1;q<arr_subchapter.length;q++)
+                    {
+                        if (arr_subchapter[p] == arr_subchapter[q]) {
+                            count++;//用来计算与当前这个元素相同的个数
+                            arr_subchapter.splice(q, 1); //没找到一个相同的元素，就要把它移除掉，
+                            q--;
+                        }
+                    }
+                    yuansu[p] = arr_subchapter[p];//将当前的元素存入到yuansu数组中
+                    sum[p] = count;  //并且将有多少个当前这样的元素的个数存入sum数组中
+                    count =1;  //再将count重新赋值，进入下一个元素的判断
+                }
+                //算出array数组中不同的元素出现的次数
+                for (var p = 0; p < yuansu.length; p++) {
+                    //console.log(yuansu[p]+"出现的次数为："+sum[p]);
+                    obj_chapter[yuansu[p]] = sum[p];
+                }
+                //console.log(yuansu);
+                //console.log(sum);
+                //console.log(obj_chapter);
+                //console.log(arr_answeroption);
+                //console.log(arr_answeroption[0][0].id); //第一个0表示是第一道题 第二个0表示是第一个选项
+                for(var m = 0;m < arr_answer.length; m++){
+                    for(var n = 0;n < arr_answeroption[m].length;n++){
+                        if(arr_answer[m] == arr_answeroption[m][n].id){
+                            arr_order.push(n);
+                        }
+                    }
+                }
+                //console.log(arr_order);
+            }
+            //小菊花
+            /*beforeSend: function(){
+                $("body").append("<section class="+"modal"+"></section>");
+                $("body").append("<section class="+"loading"+"></section>");
+            },
+            complete:function(){
+                $('.modal').remove();
+                $('.loading').remove();
+            }*/
+        });
+
+        var elem = document.getElementById('mySwipe');
+        //做题
+        $('.content').on('tap',function(e){
+            e.stopPropagation();
+            //确认单选按钮的是否已经disabled
+            if($(this).parent().find('input[type=radio]').prop('disabled') == true){
+                return;
+            }
+            //console.log($(this).index()-2);     //点击选项下标
+            //console.log($(this).parent().attr('data-index'));  //当前是哪一道题的下标
+            var optionIndex = $(this).index()-1;
+            var titleIndex = $(this).parent().attr('data-index');
+            //console.log(optionIndex);
+            //console.log(titleIndex);
+            if(arr_answer[titleIndex] == arr_answeroption[titleIndex][optionIndex].id){
+                $(this).find('input[type=radio]').addClass('right');
+            }
+            else{
+                $(this).find('input[type=radio]').addClass('wrong');
+                $(this).parent().find('.content').eq(arr_order[titleIndex]).find('span').addClass('correct');
+                //console.log(arr_subchapter2);
+                //console.log($(this).parent().attr('data-index'));
+                var wrongtitleIndex = $(this).parent().attr('data-index');     //错误的题编号
+                if(obj_wrongchapter.hasOwnProperty(arr_subchapter2[wrongtitleIndex]) == false){
+                    obj_wrongchapter[arr_subchapter2[wrongtitleIndex]] = 1;
+                }
+                else{
+                    obj_wrongchapter[arr_subchapter2[wrongtitleIndex]]++;
+                }
+                //obj_wrongchapter[arr_subchapter2[wrongtitleIndex]]++;
+                //console.log(obj_wrongchapter[arr_subchapter2[wrongtitleIndex]]);
+                console.log(obj_wrongchapter);
+        }
+            //console.log($(this).parent().find('input[type=radio]'))
+            $(this).parent().find('input[type=radio]').attr('disabled','disabled');
+            /*var ordernum = $('.ordernum').html();
+            console.log(ordernum);
+            mySwipe.next();
+            ordernum++;
+            if(ordernum>totalnum){
+                ordernum=1;
+            }
+            $('.ordernum').html(ordernum);*/
+        });
+        //提交
+        $('#submit').on('tap',function(){
+            //console.log(obj_wrongchapter);
+            for(var key in obj_chapter){
+                
+                for(var key2 in  obj_wrongchapter){
+                    if(key2 == key){
+                        //console.log(obj_wrongchapter[key2],obj_chapter[key]);
+                        //console.log(obj_wrongchapter[key2]/obj_chapter[key]);
+                    }
+                }
+            }
+        });
+        window.mySwipe = Swipe(elem, {
+            startSlide: 0,/*开始是第几页*/
+            //auto: 2000,/*自动播放的时间间隔 */
+            continuous: false,//连续播放
+            disableScroll: true,
+            // stopPropagation: true,
+            callback: function(index, element) {
+                //把第index个li变亮
+                //把全部的变暗
+                //$(elem).find('li').css("background-color","red");
+                //$(elem).find('li').eq(index).css("background-color","#fff");
+                //把当前的变亮
+                //console.info(index,element);
+                $('.ordernum').html(index+1);
+                //console.log(totalnum);
+               /* if(index > totalnum-2){
+                    console.log(obj_wrongchapter);
+                }*/
+            }
+        });
+    })
+</script>

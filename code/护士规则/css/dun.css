@@ -1,0 +1,106 @@
+.dun {
+  height: 100%;
+}
+.dun body {
+  border: 1px solid transparent;
+}
+.dun body .header {
+  height: 6.03rem;
+  background: #ffffff;
+  margin-top: .5rem;
+}
+.dun body .header h3 {
+  position: relative;
+  font-size: .28rem;
+  color: #333;
+  font-weight: bold;
+  padding-left: .79rem;
+}
+.dun body .header h3 span {
+  position: absolute;
+  left: .24rem;
+  top: 0;
+  width: .42rem;
+  height: .42rem;
+  background: url("../images/point.png") no-repeat;
+  background-size: .42rem auto;
+}
+.dun body .header p {
+  font-size: .28rem;
+  color: #333;
+  line-height: .4rem;
+  padding-left: .81rem;
+  margin-top: .34rem;
+}
+.dun body .header div {
+  text-align: center;
+  margin-top: .4rem;
+}
+.dun body .header div img {
+  width: 5.34rem;
+  height: 3.28rem;
+}
+.dun body .content {
+  height: 6.03rem;
+  background: #ffffff;
+  margin-top: .5rem;
+}
+.dun body .content h3 {
+  position: relative;
+  font-size: .28rem;
+  color: #333;
+  font-weight: bold;
+  padding-left: .79rem;
+}
+.dun body .content h3 span {
+  position: absolute;
+  left: .24rem;
+  top: 0;
+  width: .42rem;
+  height: .42rem;
+  background: url("../images/point.png") no-repeat;
+  background-size: .42rem auto;
+}
+.dun body .content p {
+  font-size: .28rem;
+  color: #333;
+  line-height: .4rem;
+  padding-left: .81rem;
+  margin-top: .34rem;
+}
+.dun body .content div {
+  text-align: center;
+  margin-top: .4rem;
+}
+.dun body .content div img {
+  width: 5.34rem;
+  height: 3.28rem;
+}
+.dun body .footer {
+  height: 2.53rem;
+  background: #ffffff;
+  margin-top: .5rem;
+}
+.dun body .footer h3 {
+  position: relative;
+  font-size: .28rem;
+  color: #333;
+  font-weight: bold;
+  padding-left: .79rem;
+}
+.dun body .footer h3 span {
+  position: absolute;
+  left: .24rem;
+  top: 0;
+  width: .42rem;
+  height: .42rem;
+  background: url("../images/point.png") no-repeat;
+  background-size: .42rem auto;
+}
+.dun body .footer p {
+  font-size: .28rem;
+  color: #333;
+  line-height: .4rem;
+  padding-left: .81rem;
+  margin-top: .34rem;
+}

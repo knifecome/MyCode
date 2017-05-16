@@ -1,0 +1,142 @@
+.invite-zhaohuan {
+  height: 100%;
+  background: #FDFDFD;
+}
+.invite-zhaohuan body {
+  height: 100%;
+  width: 7.5rem;
+  background: url("../images/bg1.png") no-repeat #FDFDFD;
+  background-size: 7.5rem auto;
+  border: 1px solid transparent;
+}
+.invite-zhaohuan body .wancheng {
+  position: absolute;
+  left: 50%;
+  top: 4.56rem;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: .4rem;
+  color: #333;
+}
+.invite-zhaohuan body .number {
+  position: absolute;
+  left: 50%;
+  top: 5.16rem;
+  font-size: .24rem;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  white-space: nowrap;
+  color: #666;
+  text-decoration: underline;
+}
+.invite-zhaohuan body .number span {
+  color: #000;
+  font-size: .3rem;
+}
+.invite-zhaohuan body .longbox {
+  margin-top: 6.56rem;
+  width: 7.5rem;
+  height: 8.33rem;
+}
+.invite-zhaohuan body .longbox h3 {
+  padding-top: 1.08rem;
+  padding-bottom: .3rem;
+  line-height: .38rem;
+  font-size: .38rem;
+  color: #999;
+  text-align: center;
+}
+.invite-zhaohuan body .longbox p.shijian {
+  line-height: .65rem;
+  font-size: .65rem;
+  color: #666;
+  padding-bottom: .26rem;
+  text-align: center;
+}
+.invite-zhaohuan body .longbox p.yiweinin {
+  line-height: .35rem;
+  font-size: .35rem;
+  color: #999;
+  padding-bottom: .26rem;
+  text-align: center;
+}
+.invite-zhaohuan body .longbox div {
+  margin: .2rem .75rem;
+  overflow: hidden;
+}
+.invite-zhaohuan body .longbox div section {
+  float: left;
+  padding: 0 .4rem;
+}
+.invite-zhaohuan body .longbox div section span {
+  width: 1.18rem;
+  height: 1.18rem;
+  border-radius: 50%;
+  background: url("../images/touxiang1.png") no-repeat;
+  background-size: contain;
+}
+.invite-zhaohuan body .longbox div section span.active {
+  background: url("../images/touxiang2.png") no-repeat;
+  background-size: contain;
+}
+.invite-zhaohuan body .longbox div section em {
+  font-size: .3rem;
+  color: #1b1a1a;
+  display: block;
+  text-align: center;
+  margin-top: .05rem;
+  width: .9rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.invite-zhaohuan body .longbox div section strong {
+  font-style: normal;
+  font-weight: normal;
+  font-size: .2rem;
+  color: #709FED;
+  display: block;
+  text-align: center;
+}
+.invite-zhaohuan body .longbox .qq {
+  font-size: .24rem;
+  text-align: center;
+  color: #cccccc;
+  margin: .6rem 0 .2rem 0;
+}
+.invite-zhaohuan body .longbox a.liji {
+  display: block;
+  width: 4.34rem;
+  height: .8rem;
+  line-height: .8rem;
+  margin: 0.2rem auto .2rem;
+  background: #FF6D93;
+  text-align: center;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  font-size: .28rem;
+}
+.invite-zhaohuan body .longbox a.jixu {
+  display: block;
+  width: 4.34rem;
+  height: .8rem;
+  background: url("../images/share.png") no-repeat;
+  background-size: 4.34rem auto;
+  margin: .3rem auto .2rem;
+  text-indent: -9999px;
+}
+.invite-zhaohuan body .longbox span {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  font-size: .24rem;
+  color: #4b4b4b;
+}

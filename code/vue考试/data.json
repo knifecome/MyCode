@@ -1,0 +1,149 @@
+[
+{
+    "answer": "3d40146a6ca44a44904a5aaa8f9322f6",
+    "attachment": "",
+    "answers": [{
+        "content": "癌症",
+        "id": "ccf3745de3524964909c736aa13aabd5",
+        "label": "A",
+        "question_id": "8913aeb1caf0445191627ee9d04229aa",
+        "sort": 5
+    },
+    {
+        "content": "高度可疑癌症",
+        "id": "e4f3166d66f24bd193a6e62adc6867c2",
+        "label": "B",
+        "question_id": "8913aeb1caf0445191627ee9d04229aa",
+        "sort": 4
+    },
+    {
+        "content": "轻度炎症",
+        "id": "dbfeb2fefa51484ba9aa20dbf3251d03",
+        "label": "C",
+        "question_id": "8913aeb1caf0445191627ee9d04229aa",
+        "sort": 1
+    },
+    {
+        "content": "重度炎症",
+        "id": "6330b862420a41bd9776ac0aa421ae7e",
+        "label": "D",
+        "question_id": "8913aeb1caf0445191627ee9d04229aa",
+        "sort": 2
+    },
+    {
+        "content": "可疑癌症",
+        "id": "3d40146a6ca44a44904a5aaa8f9322f6",
+        "label": "E",
+        "question_id": "8913aeb1caf0445191627ee9d04229aa",
+        "sort": 3
+    }],
+    "authorizeId": "",
+    "content": "患者女，37岁，G2P1。3天前发现“性生活后阴道有血性白带”。子宫颈刮片细胞学检查结果为巴氏Ⅲ级。患者询问检查结果的意义，正确的解释是",
+    "create_time": "2016-12-24 10:55:45",
+    "exam_id": "1af171t670874ba384e30fe36f3e8021",
+    "id": "8913aeb1caf0445191627ee9d04229aa",
+    "label": "24",
+    "num": 0,
+    "sort": 24,
+    "type": 0,
+    "update_time": "2016-12-24 10:55:45"
+},
+{
+    "answer": "d6ec7abb6ad649a2bcc448b337924273",
+    "attachment": "http://cdn.yihuzhijia.cn/static/hkjj/images/zhenguan.png",
+    "answers": [{
+        "content": "建议患者转院",
+        "id": "058069f6719644f2b60b3557cb101d84",
+        "label": "A",
+        "question_id": "4446959646714821ab7ea2cfa0949bdb",
+        "sort": 1
+    },
+    {
+        "content": "建议患者签字放弃治疗",
+        "id": "255afda43d7a4a6fa56fc64b647ec209",
+        "label": "B",
+        "question_id": "4446959646714821ab7ea2cfa0949bdb",
+        "sort": 5
+    },
+    {
+        "content": "向患者介绍手术成功的例子",
+        "id": "d6ec7abb6ad649a2bcc448b337924273",
+        "label": "C",
+        "question_id": "4446959646714821ab7ea2cfa0949bdb",
+        "sort": 3
+    },
+    {
+        "content": "告诉患者手术很简单",
+        "id": "0eb48487cbe84a308c47056c3737ffbc",
+        "label": "D",
+        "question_id": "4446959646714821ab7ea2cfa0949bdb",
+        "sort": 4
+    },
+    {
+        "content": "告知患者手术已经安排，无法更改",
+        "id": "2b496248e5f2471eaac0bc70abe361ac",
+        "label": "E",
+        "question_id": "4446959646714821ab7ea2cfa0949bdb",
+        "sort": 2
+    }],
+    "authorizeId": "",
+    "content": "患者女，45岁。反复不规则发热6个月，半个月前出现左下肢酸痛，行走困难，伴胸闷，心悸，被诊断为“亚急性感染性心内膜炎，二尖瓣脱垂伴关闭不全”，建议手术治疗。患者对手术非常担心，适宜的护理措施是",
+    "create_time": "2016-12-24 10:55:45",
+    "exam_id": "1af171t670874ba384e30fe36f3e8021",
+    "id": "4446959646714821ab7ea2cfa0949bdb",
+    "label": "15",
+    "num": 0,
+    "sort": 15,
+    "type": 0,
+    "update_time": "2016-12-24 10:55:45"
+},
+{
+    "answer": "aa09bc6809f34dd0a8b75f5ffc8277c7",
+    "attachment": "http://cdn.yihuzhijia.cn/avatar/20170211/1ea3d0b0d235a20a79d739c7.jpg",
+    "answers": [{
+        "content": "伤口渗血情况",
+        "id": "c696dddaa66a432a9ec62c6aefed259e",
+        "label": "A",
+        "question_id": "133293a3d1e24c3ca1ef2a7154155cfb",
+        "sort": 5
+    },
+    {
+        "content": "约束时间",
+        "id": "b7a8e1fe9a7f43e986b318ed71bc421e",
+        "label": "B",
+        "question_id": "133293a3d1e24c3ca1ef2a7154155cfb",
+        "sort": 3
+    },
+    {
+        "content": "呼吸情况",
+        "id": "1fb4dc9c8d1349e3a00331999f77d684",
+        "label": "C",
+        "question_id": "133293a3d1e24c3ca1ef2a7154155cfb",
+        "sort": 1
+    },
+    {
+        "content": "血压情况",
+        "id": "2bd0f4366b5a407094f9b49d4be918d0",
+        "label": "D",
+        "question_id": "133293a3d1e24c3ca1ef2a7154155cfb",
+        "sort": 2
+    },
+    {
+        "content": "末梢血液循环",
+        "id": "aa09bc6809f34dd0a8b75f5ffc8277c7",
+        "label": "E",
+        "question_id": "133293a3d1e24c3ca1ef2a7154155cfb",
+        "sort": 4
+    }],
+    "authorizeId": "",
+    "content": "患者男，35岁。因“头部外伤”急诊入院。现浅昏迷，CT提示颅内血肿，脑挫裂伤，在全麻下行颅内血肿清除术。【假设信息】患者出现躁动，使用约束带时护士需重点观察",
+    "create_time": "2016-12-24 10:55:46",
+    "exam_id": "1af171t670874ba384e30fe36f3e8021",
+    "id": "133293a3d1e24c3ca1ef2a7154155cfb",
+    "label": "57",
+    "num": 0,
+    "sort": 57,
+    "type": 0,
+    "update_time": "2016-12-24 10:55:46"
+}
+]

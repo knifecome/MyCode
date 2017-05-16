@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<script>
+  var ua = window.navigator.userAgent;
+  if (/Mobile|iP(hone|ad)|Android|BlackBerry|IEMobile/.test(ua)) {
+    //window.location.href = "";
+  }
+</script>
+    <meta charset="gb2312">
+    <title>优成长</title>
+    <meta name="keywords" content="优成长，孩子管控，孩子手机管控，孩子上网助手，孩子上网控制，禁止孩子上网，防止孩子用手机玩游戏，禁止聊微信QQ，孩子定位" />
+    <meta name="description" content="优成长，孩子管控，孩子手机管控，孩子上网助手，孩子上网控制，禁止孩子上网，防止孩子用手机玩游戏，禁止聊微信QQ，孩子定位" />
+    <base targrt="_blank">
+    <meta http-equiv="X-UA-Compatible" Content="IE=Edge,chrome=1">
+    <!-- <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui" /> -->
+    <link href="css/glb1311.css" rel="stylesheet" type="text/css" media="all" ignoreapd="false">
+    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css">
+    <link rel="stylesheet" type="text/css" href="css/index2.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+</head>
+
+<body>
+<div class="weixin">
+    <p>优成长</p>
+    <img src="img/QRcode2.png" alt="">
+</div>
+<div class="section page1">
+    <div class="center grid eol-animation">
+        <div class="left eol-show">
+            <div class="roll"></div>
+            <div class="people"></div>
+            <div class="cellphone"></div>
+            <div class="hand"></div>
+        </div>
+        <div class="right eol-txt">
+            <img src="img/logo.png" alt="" class="logo">
+            <p class="txt">守护孩子的成长和健康</p>
+            <div class="grid">
+                <a class="left btn" href="http://182.92.77.233:8083/api/download.php?apkid=03091866737&jh=j">家长端</a>
+                <a class="right btn" href="http://182.92.77.233:8083/api/download.php?apkid=03091866737&jh=h">孩子端</a>
+            </div>
+            <div class="QRcode">
+                <img src="img/QRcode.png" alt="">
+                <p>手机扫码下载优成长APP</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section page2">
+    <div class="center grid">
+        <div class="txt left col-50">
+            <h2>优成长</h2>
+            <h3>一键管理,轨迹护航</h3>
+            <p>禁止游戏，上网管理，爱的轨迹</p>
+        </div>
+        <div class="right img col-50">
+            <img src="img/page2-img.png" alt="">
+        </div>
+    </div>
+</div>
+<div class="section page3">
+    <div class="center grid">
+        <div class="txt right col-50">
+            <h2>一键管控</h2>
+            <h3>孩子上网计划</h3>
+            <p>一键管控孩子上网，游戏，定时策略</p>
+        </div>
+        <div class="left img col-50">
+            <img src="img/page3-img.png" alt="">
+        </div>
+    </div>
+</div>
+<div class="section page4">
+    <div class="center grid">
+        <div class="txt left col-50">
+            <h2>成长<span>护航</span></h2>
+            <h3>引导孩子健康使用手机</h3>
+            <p>视力保护，管控计划<br>爱的轨迹，游戏应用管控</p>
+        </div>
+        <div class="right img col-50">
+            <img src="img/page4-img.png" alt="">
+        </div>
+    </div>
+</div>
+<div class="section page5">
+    <div class="page5-info">
+        <div class="center grid">
+            <div class="info">
+                <h4>优成长报</h4>
+                <h5>守护孩子的成长和健康</h5>
+                <div class="grid QRcode_bottom">
+                    <div class="left">
+                        <img src="img/page5-img.png" alt="">
+                    </div>
+                    <div class="right">
+                        <img src="img/QRcode.png" alt="">
+                        <p>手机扫码下载优成长app</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+   
+        <!-- 通用底部代码,上线记得删除 -->
+        
+    </div>
+</div>
+
+<script src="js/jquery.js" ignoreapd="false"></script>
+<script src="js/jquery-ui-1.10.3.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $(".eol-show .roll").addClass("zoomIn");
+        setTimeout('$(".eol-show .cellphone").addClass("circle")',1000);
+        setTimeout('$(".eol-show .hand").animate({bottom:"0px"},1000)',1800);
+        setTimeout('$(".eol-show .eolgkpage").addClass("zoomIn")',3000);
+        setTimeout('$(".eol-show .people").addClass("show")',1800);
+        setTimeout('$(".eol-txt").fadeIn(2000)',3000);
+        setTimeout('$(".eol-txt .QRcode").addClass("bounce")',5000);
+        $.fn.fullpage({
+            slidesColor: ['#4c9bf5', '#9462e0', '#6ac75b', '#fff29b','#ffffff'],
+            anchors: ['page1', 'page2', 'page3', 'page4' ,'page5',  'page6',  'page7' ],
+            'navigation': true,
+            'navigationPosition': 'right',
+            'resize': true,
+            afterLoad: function(anchorLink, index){
+                if(index == '1'){
+                   $(".eol-txt .QRcode").addClass("bounce")
+                   setTimeout('$(".eol-txt .weixin").addClass("bounce")',2000);
+                }
+                if(index == '2'){
+                    $(".weixin").addClass("show");
+                    $(".weixin").css("top",($(window).height() - $("#fullPage-nav").height()) /2 - 96)
+                    $('.page2 .txt').addClass("fadeInLeft");
+                    $('.page2 .img').addClass("fadeInRight");
+                }
+                if(index == '3'){
+                    $('.page3 .img').addClass("fadeInLeft");
+                    $('.page3 .txt').addClass("fadeInRight");
+                }
+                if(index == '4'){
+                    $('.page4 .txt').addClass("fadeInLeft");
+                    $('.page4 .img').addClass("fadeInRight");
+                }
+                if(index == "5"){ 
+                    var slide5_top = ($(window).height() - $(".page5-info .center").height() - $(".footer").height()) / 2;
+                    $(".page5-info .center").css("margin-top",slide5_top);
+                    $('.page5 .info').addClass("zoomIn");
+                }
+            },
+            onLeave: function(index, direction){
+                if(index == '1'){
+                    $(".weixin").removeClass("show");
+                    $(".eol-txt .QRcode").removeClass("bounce")
+                    $(".eol-txt .weixin").removeClass("bounce")
+                }
+                if(index == '2'){
+                    $('.page2 .txt').removeClass("fadeInLeft");
+                    $('.page2 .img').removeClass("fadeInRight");
+                }
+                if(index == '3'){
+                    $('.page3 .img').removeClass("fadeInLeft");
+                    $('.page3 .txt').removeClass("fadeInRight");
+                }
+                if(index == '4'){
+                    $('.page4 .txt').removeClass("fadeInLeft");
+                    $('.page4 .img').removeClass("fadeInRight");
+                }
+                if(index == '5'){
+                    $('.page5 .info').removeClass("zoomIn");
+                }
+                
+            }
+        });
+    });
+</script>
+
+<!-- 自适应高度 -->
+  <script>
+        var eol_txt_h = ($(window).height() - $(".eol-txt").height()) / 2;
+        $(".eol-txt").css("margin-top", eol_txt_h)
+  </script>
+
+</body>
+<div style="width:1px;height:1px;overflow:hidden;">
+    <script type="text/javascript">
+   // document.write('<images src="?'+Math.round(Math.random()*1e17)+'" width="0" height="0"/>');
+    </script>
+    <noscript>
+    <img src="" width="0" height="0" />
+    </noscript>
+<!-- ecounter -->
+<script>
+var pkBaseURL = (("https:" == document.location.protocol) ? "" : "");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "", 76);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="http://stat.eol.cn/mysql.php?idsite=76" style="border:0" alt="" /></p></noscript>
+<!-- End ecounter Tag -->
+<script src="http://s6.cnzz.com/stat.php?id=4696180&web_id=4696180" language="JavaScript"></script>
+</div>
+
+</html>

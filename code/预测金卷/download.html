@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" class="product">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no"/>
+    <title></title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/product.css"/>
+    <script src="js/mediaquery2.js"></script>
+    <script src="js/zepto.min.js"></script>
+</head>
+<body class="download">
+    <h1>2017护考预测金卷</h1>
+    <p class="p1">护考通过神器</p>
+    <p class="service"> <span></span>你正在购买以下服务：</p>
+    <div class="hukao"></div>
+    <div class="dl-wrap">
+        <a href="javascript:;" class="dl">开始支付</a>
+    </div>
+
+<footer class="footer2">
+    <p>免费咨询</p>
+    <div class="teacher">护考辅导老师: <span id="tName"></span>，辅导10000+学生顺利通过护考 </div>
+    <div class="info">QQ:<span id="qqNum"></span>电话:<em id="tPhone"></em></div>
+</footer>
+    <!--小菊花-->
+    <section class="loading-modal"></section>
+    <section class="loading"></section>
+</body>
+</html>
+<script>
+    $(function(){
+        var url = location.href;
+        var url1 = url.split("?")[1];
+        var url2 = url1.split("&")[0];
+        var url3 = url1.split("&")[1];
+        var userId = url2.split("=")[1];
+        var productId = url3.split("=")[1];
+
+
+          /*  window.doProductClick = function(id, url) {
+                var data = {
+                    id:'d4f12e0f0e17413a9c09248aab40f026',
+                    url:'https://api.yihuzhijia.cn/assets/html/product/detaild4f12e0f0e17413a9c09248aab40f026.html'
+                };
+                nativeCallback("product", data);
+            };*/
+
+        if(productId == '57d41438b33e449ba31ed9a667172e7b'){
+            $('.hukao').html('2017护考预测金卷');
+        }else{
+            $('.hukao').html('2017护考预测金卷+第二年免费学');
+        }
+        $.ajax({
+            url : 'http://192.168.0.76:8080/baoguo/getTeacherInfo?userId='+userId+'',
+            type : 'post',
+            async : true,
+            dataType : 'json',
+            success : function(data){
+                console.log(data);
+                if(data.code == 200){
+                    $('#tName').html(data.value.name);
+                    $('#qqNum').html(data.value.qq[0]);
+                    $('#tPhone').html(data.value.telephone);
+                }
+            },
+            //小菊花
+            beforeSend: function(){
+                showloading();
+            },
+            complete:function(){
+                hideloading();
+            }
+        });
+
+        /*$('.dl').on('touchend', function (e) {
+            e.stopPropagation();
+            doProductClick();
+        });*/
+
+        /*弹出小菊花*/
+        function showloading(){
+            $('.loading-modal').css('display',"block");
+            $('.loading').css('display',"block");
+        }
+
+        /*隐藏小菊花*/
+        function hideloading(){
+            $('.loading-modal').css('display',"none");
+            $('.loading').css('display',"none");
+        }
+    })
+</script>

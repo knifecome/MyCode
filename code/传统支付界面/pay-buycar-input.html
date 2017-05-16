@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" class="pay-buycar">
+<head>
+    <meta charset="UTF-8">
+    <title>12-1预付定金</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/pay-buycar.css"/>
+</head>
+<body>
+<section class="header flex sb ac">
+    <span></span>
+    <span>购物车</span>
+    <span class="tog">编辑</span>
+</section>
+<form action="" id="form2">
+    <!--图书列表-->
+    <section class="wrapper">
+        <section class="book-item2 flex fs">
+            <input type="checkbox" id="checkbox1" class="choose"><label for="checkbox1"></label>
+            <img src="images/book.png" alt=""/>
+            <div>
+                <h3>护考A计划.黄金考点</h3>
+                <div class="btn-component">
+                    <a class="sub">-</a>
+                    <input type="text" value="1">
+                    <a class="add">+</a>
+                </div>
+                <p>x<em class="number">1</em></p>
+                <p>总价值<span>￥<em class="price">298.00</em></span></p>
+                <p>使用积分<span>0</span></p>
+            </div>
+        </section>
+        <section class="daijinquan flex sb"><span>代金券</span><em>不使用代金券</em></section>
+        <section class="dis20"></section>
+    </section>
+
+    <section class="wrapper">
+        <section class="book-item2 flex fs">
+            <!--<div class="single s1"></div>-->
+            <input type="checkbox" checked id="checkbox2" class="choose"><label for="checkbox2"></label>
+            <img src="images/book.png" alt=""/>
+            <div>
+                <h3>护考A计划.黄金考点</h3>
+                <div class="btn-component">
+                    <a class="sub">-</a>
+                    <input type="text" value="1">
+                    <a class="add">+</a>
+                </div>
+                <p>x<em class="number">1</em></p>
+                <p>总价值<span>￥<em class="price">398.00</em></span></p>
+                <p>使用积分<span>0</span></p>
+            </div>
+        </section>
+        <section class="daijinquan flex sb"><span>代金券</span><em>不使用代金券</em></section>
+        <section class="dis20"></section>
+    </section>
+
+
+    <!--计算-->
+    <section class="count">
+        <p>总计 <span>￥530.00( 8000积分 )</span> =商品金额￥596.00</p>
+        <p>- 已付定金￥66.00</p>
+    </section>
+    <section class="dis232"></section>
+    <section class="last">
+        <!--总价格-->
+        <section class="totalprice">
+            <div class="flex sb">
+                <!--<span class="allchoose"></span>-->
+                <input type="checkbox" id="checkbox3"><label for="checkbox3" id="all"></label>
+                <span>总计 : ￥ <em id="totalprice">530</em>.00</span>
+            </div>
+            <div class="flex sb">
+                <span>全选</span>
+                <span>使用积分<em>3000</em></span>
+                <span>不含运费</span>
+            </div>
+        </section>
+        <!--结算-->
+        <footer class="flex sb">
+            <input type="button" value="付定金" id="dingjin">
+            <input type="button" value="删除" id="shanchu" style="margin: 0 auto">
+            <input type="button" value="结算" id="jiesuan">
+        </footer>
+    </section>
+</form>
+<!--模态框-->
+<section class="modal-wrap" id="modal-wrap">
+
+</section>
+<div class="wrap" id="wrap">
+    <p>预付定金</p>
+    <input type="number" placeholder="请输入您的预定金额" id="yuding">
+    <button id="nextstep">下一步</button>
+</div>
+
+<!--模态框 确认删除模态框-->
+<section class="modal-wrap3" id="modal-wrap3">
+
+</section>
+<section class="wrap3" id="wrap3">
+    <p>提示</p>
+    <p>确认删除这条回复?</p>
+    <div class="btn"><input type="button" value="确定" id="btn-confirm"><input type="button" value="取消" id="btn-cancel"></div>
+</section>
+
+<!--提示框-->
+<section class="alertbox"></section>
+</body>
+</html>
+<script src="js/mediaquery2.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/fx_methords.js"></script>
+<script>
+    $(function(){
+        function showalertbox(){
+            $('.alertbox').show(1000);
+            $('.alertbox').css("-webkit-transform",'translateX(-50%)');
+            $('.alertbox').css("transform",'translateX(-50%)');
+        }
+        var isempty =false;
+        var totalnumber=0;
+        var data =[{
+            "code": 200,
+            "value": [
+                {
+                    "price": 298.00,
+                    "count":1
+                },
+                {
+                    "price": 398.00,
+                    "count":1
+                }
+            ]
+        }];
+        
+        for(var i=0;i<data[0].value.length;i++){
+            var price = data[0].value[i].price;
+            var count = data[0].value[i].count;
+            totalnumber += price*count;
+            $('#totalprice').html(totalnumber);
+        }
+
+
+        /*单独点击按钮并进行监听*/
+        $(".choose").on('click',function(e){
+            e.stopPropagation();
+            if($("#checkbox1").is(":checked") && $("#checkbox2").is(":checked")){
+                $("#checkbox3").prop("checked",true);
+            }
+            else{
+                $("#checkbox3").prop("checked",false);
+            }
+        });
+
+        /*全选*/
+        $("#checkbox3").on('click',function(e){
+            e.stopPropagation();
+            if($("#checkbox3").is(":checked")){
+                $(".choose").prop("checked",true);
+            }
+            else{
+                $(".choose").prop("checked",false);
+            }
+        });
+
+
+        /*付定金*/
+        $("#dingjin").on('touchend',function(e){
+            e.stopPropagation();
+            $("#modal-wrap").css("display","block");
+            $("#wrap").css("display","block");
+
+        });
+
+        //取消模态框
+        $(document).on('touchend',function(e){
+            //e.preventDefault();
+            var targetId = e.target.id;
+
+            if(targetId == "modal-wrap" ){
+                $("#modal-wrap").css("display","none");
+                $("#wrap").css("display","none");
+                $('.alertbox').css('display','none');
+            }
+            if(targetId == "modal-wrap3" ){
+                $("#modal-wrap3").css("display","none");
+                $("#wrap3").css("display","none");
+                $('.alertbox').css('display','none');
+            }
+        });
+
+        //输入金额
+        $('#yuding').on('touchend',function(e){
+            e.stopPropagation();
+        });
+
+        //点击下一步
+        $('#nextstep').on('touchend',function(e){
+            e.stopPropagation();
+            if(!$("#checkbox1").is(":checked") && !$("#checkbox2").is(":checked")){
+                showalertbox();
+                $('.alertbox').html('请选择需要购买的商品');
+                setTimeout(function(){
+                    $('.alertbox').hide(1000);
+                },2000);
+                return;
+            }
+            if(!$('#yuding').val()){
+                showalertbox();
+                $('.alertbox').html('请输入金额');
+                setTimeout(function(){
+                    $('.alertbox').hide(1000);
+                },2000);
+                return;
+            };
+            location.href = 'pay-address.html';
+        });
+
+
+        /*结算*/
+       $('#jiesuan').on('touchend',function(e){
+           e.stopPropagation();
+           if(!$("#checkbox1").is(":checked") && !$("#checkbox2").is(":checked")){
+               showalertbox();
+               $('.alertbox').html('请选择需要购买的商品');
+               setTimeout(function(){
+                   $('.alertbox').hide(1000);
+               },2000);
+               return;
+           }
+           location.href = 'pay-address.html';
+       });
+
+        /*切换 完成和编辑*/
+       $('.tog').click(function(){
+           $('h3').toggle();
+           $('.btn-component').toggle();
+           $('#dingjin').toggle();
+           $('#jiesuan').toggle();
+           $('#shanchu').toggle();
+           var value=$(this).html()=='编辑'?'完成':'编辑';
+           $(this).html(value);
+       });
+
+        /*点击加*/
+        var num;
+        var unit_price;   //单价
+        $(".add").click(function(){
+            var total=0;
+            num=$(this).prev().val();
+            unit_price = parseInt($(this).parent().siblings('p').find(".price").html())/num;
+            //console.log("unit_price:"+unit_price);
+            num++;
+            $(this).prev().val(num);
+            $(this).parent().siblings("p").find(".number").html(num);
+            $(this).parent().siblings('p').find(".price").html(unit_price*num);
+            $('.price').each(function(){
+                total +=parseInt($(this).html());
+                $("#totalprice").html(total);
+            });
+
+        });
+        /*点击减*/
+        $(".sub").click(function(){
+            var total=0;
+            var num=0;
+            num=$(this).next().val();
+            unit_price = parseInt($(this).parent().siblings('p').find(".price").html())/num;
+            num--;
+            if(num<1){
+                num=1;
+            }
+            $(this).next().val(num);
+            $(this).parent().siblings("p").find(".number").html(num);
+            $(this).parent().siblings('p').find(".price").html(unit_price*num);
+            $('.price').each(function(){
+                total +=parseInt($(this).html());
+                $("#totalprice").html(total);
+            });
+        });
+
+
+
+        //点击删除
+        $('#shanchu').on('touchend',function(e){
+            e.stopPropagation();
+            $('.choose:checked').each(function(){
+                isempty = $(this);
+            });
+            if(!isempty){
+                showalertbox();
+                $('.alertbox').html('请选择需要删除的商品');
+                setTimeout(function(){
+                    $('.alertbox').hide(1000);
+                },2000);
+                return;
+            }
+            else{
+                $('.modal-wrap3').css("display","block");
+                $('.wrap3').css("display","block");
+                isempty = false;
+            }
+        });
+
+        //确定删除选中项
+        $('#btn-confirm').on('touchend',function(e){
+            var total=0;
+            e.stopPropagation();
+            $('.choose:checked').each(function(){
+                $(this).parent().parent().remove();
+            });
+            $('.price').each(function(){
+                total+=parseInt($(this).html());
+            });
+            $("#totalprice").html(total);
+            $("#modal-wrap3").css("display","none");
+            $("#wrap3").css("display","none");
+        });
+
+        //取消模态框消失
+        $('#btn-cancel').on('touchend',function(e){
+            e.stopPropagation();
+            $("#modal-wrap3").css("display","none");
+            $("#wrap3").css("display","none");
+        });
+
+    });
+
+</script>

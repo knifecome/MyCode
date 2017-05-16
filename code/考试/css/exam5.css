@@ -1,0 +1,200 @@
+.kaoshi-exam {
+  height: 100%;
+}
+.kaoshi-exam body {
+  height: 100%;
+  background: #ffffff;
+  position: relative;
+  /*ģ̬��2*/
+}
+.kaoshi-exam body .header {
+  height: .91rem;
+  background: #f9f9f9;
+  font-family: "MicrosoftYaHeiLight";
+  font-size: .32rem;
+  padding: 0 .23rem;
+}
+.kaoshi-exam body .header span {
+  color: #4C4C4C;
+}
+.kaoshi-exam body .title {
+  width: 7.01rem;
+  line-height: .27rem;
+  border-radius: .2rem;
+  font-size: .18rem;
+  margin: .3rem auto .48rem;
+  background: #ED7097;
+  position: relative;
+}
+.kaoshi-exam body .title div {
+  width: 6.75rem;
+  font-size: .32rem;
+  line-height: .44rem;
+  color: #ffffff;
+  padding: .36rem .47rem  .4rem .4rem;
+}
+.kaoshi-exam body .title span {
+  position: absolute;
+  width: .76rem;
+  height: .67rem;
+  background: url("../images/ren.png") no-repeat;
+  background-size: .76rem auto;
+  right: .1rem;
+  bottom: -0.2rem;
+}
+.kaoshi-exam body .content {
+  margin: 0 .2rem .2rem;
+}
+.kaoshi-exam body .content .content-wrap {
+  position: relative;
+}
+.kaoshi-exam body .content .content-wrap input[type=radio] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: .7rem;
+  height: .7rem;
+  line-height: .7rem;
+  text-align: center;
+  border: 1px solid #D9D9D9;
+  border-radius: .35rem ;
+  background: transparent;
+  /*ע��radio,checkbox��iphone��Ĭ����ɫ*/
+}
+.kaoshi-exam body .content .content-wrap label {
+  padding-left: .33rem;
+  padding-top: .1rem;
+  font-size: .28rem;
+  line-height: .5rem;
+  color: #4C4C4C;
+  flex: 1;
+}
+.kaoshi-exam body .content .content-wrap input[type='radio']:checked + span {
+  /*background:#ED7097;
+          color: #ffffff;*/
+}
+.kaoshi-exam body .content .content-wrap input[type='radio']:checked.wrong + span {
+  background: red;
+  color: #ffffff;
+}
+.kaoshi-exam body .content .content-wrap input[type='radio']:checked.right + span {
+  background: green;
+  color: #ffffff;
+}
+.kaoshi-exam body .content .content-wrap span {
+  width: .7rem;
+  height: .7rem;
+  line-height: .7rem;
+  text-align: center;
+  border: 1px solid #D9D9D9;
+  border-radius: .35rem ;
+  color: #a1a1a1;
+}
+.kaoshi-exam body .content .content-wrap span.correct {
+  background: green;
+  color: #ffffff;
+}
+.kaoshi-exam body .footer {
+  width: 100%;
+  height: 1.05rem;
+  border-top: 1px dashed #e1e1e1;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+.kaoshi-exam body .footer span {
+  display: inline-block;
+  height: 100%;
+  padding-top: .65rem;
+  margin-left: .2rem;
+  text-align: center;
+  color: #ED7097;
+  background: url("../images/clock.gif") no-repeat center 0.14rem;
+  background-size: .43rem auto;
+}
+.kaoshi-exam body .footer #submit {
+  float: right;
+  margin: 0 .2rem 0 0;
+  color: #b1b1b1;
+  font-size: .26rem;
+  background: url("../images/submit.png") no-repeat center 0.14rem;
+  background-size: .43rem auto;
+}
+.kaoshi-exam body .modal {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.kaoshi-exam body .loading {
+  display: block;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 1.28rem;
+  height: 1.28rem;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background: url("../images/loading.gif") no-repeat;
+  background-size: 1.28rem auto;
+}
+.kaoshi-exam body .modal-wrap2 {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.kaoshi-exam body .wrap2 {
+  display: none;
+  position: fixed;
+  width: 4.59rem;
+  border-radius: 10px;
+  background: #ffffff;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.kaoshi-exam body .wrap2 p {
+  text-align: center;
+  color: #4c4c4c;
+}
+.kaoshi-exam body .wrap2 p:nth-of-type(1) {
+  padding-top: .1rem;
+  line-height: .64rem;
+  font-size: .34rem;
+  font-family: "Microsoft Yahei";
+}
+.kaoshi-exam body .wrap2 p:nth-of-type(2) {
+  line-height: .78rem;
+  font-size: .28rem;
+  font-family: "Microsoft Yahei Light";
+  border-bottom: 1px solid #f7f7f7;
+}
+.kaoshi-exam body .wrap2 .btn input {
+  display: inline-block;
+  line-height: .98rem;
+  font-size: .32rem;
+  background: transparent;
+  color: #a1a1a1;
+}
+.kaoshi-exam body .wrap2 .btn input:nth-of-type(1) {
+  width: 50%;
+  color: #ed7097;
+}
+.kaoshi-exam body .wrap2 .btn input:nth-of-type(2) {
+  width: 50%;
+}

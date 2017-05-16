@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" class="invite-form">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>表单</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/form.css"/>
+    <script src="js/mediaquery2.js"></script>
+    <script src="js/zepto.min.js"></script>
+</head>
+<body>
+        <section class="longbox">
+            <h2>
+                <div class="word">护考终极班：夯实基础， 轻松划重点，权威专家押题， 通关大杀器，<span class="shuzi">99.8％</span>通过率， <span class="shuzi">８</span>年好评。</div>
+                <div class="word baoming">已有 <span class="shuzi">568</span> 名金卷用户报名参加</div>
+            </h2>
+            <form>
+                <input type="number" placeholder="输入手机号码" class="text1" id="phone" name="phone">
+                <div class="alert">
+                    <p>很抱歉，你还不是金卷用户不能报名护考终极班</p>
+                </div>
+                <input type="button" value="点击报名护考终极班" class="login">
+                <span class="shouzhi"></span>
+            </form>
+        </section>
+        <section class="modal-wrap"></section>
+        <section class="modal">
+            <p>提示</p>
+            <p class="bianliang"></p>
+            <p>确定</p>
+        </section>
+        <section class="noInternet">
+            请求失败，请检查网络
+        </section>
+</body>
+</html>
+<script>
+    $(function(){
+        /*验证手机*/
+        function checkPhone(){
+            var phone = $('#phone').val();
+            if(!(/^1[34578]\d{9}$/.test(phone))){
+                return 0;
+            }else{
+                return 1;
+            }
+        }
+
+        //当网络掉线的时候，应该显示提示文字
+        window.onoffline = function(){
+            $('.noInternet').show(200);
+        };
+
+        //当网络上线的时候，应该隐藏提示文字
+        window.ononline = function(){
+            $('.noInternet').hide(200);
+        };
+
+        /*最终验证*/
+        $('.login').on('touchend',function(e){
+            e.stopPropagation();
+            if(window.navigator.onLine){
+                if(!checkPhone()){
+                    showModal();
+                    $('.bianliang').html("手机号码位数不对");
+                    return;
+                }
+                var phone=$('#phone').val();
+              /*  $.ajax({
+                    url : 'https://api.test.yihuzhijia.cn/jinjuan/status',
+                    type : 'post',
+                    async : true,
+                    data : {phone : phone},
+                    dataType : 'json',
+                    success : function(data){
+                        if(data.code == 400){
+                            $('#phone').css('display','none');
+                            $('.alert').css("display",'block');
+                        }
+                    }
+                });*/
+                var data = {
+                    "code":400,
+                    "data":""
+                };
+                if(data.code == 400){
+                   $('#phone').css('display','none');
+                    $('.alert').css("display",'block');
+                }
+            }
+            else{
+                showModal();
+                $('.bianliang').html("请求失败,请检查网络");
+                $('.noInternet').show(200);
+            }
+        });
+
+
+
+        /*消除模态框*/
+        $(document).on('touchend',function(e){
+            hideModal();
+        });
+
+        //弹出模态框
+        function showModal(){
+            $('.modal-wrap').css('display',"block");
+            $('.modal').css('display',"block");
+        };
+
+        //关闭模态框
+        function hideModal(){
+            $('.modal-wrap').css('display',"none");
+            $('.modal').css('display',"none");
+        };
+
+    })
+</script>

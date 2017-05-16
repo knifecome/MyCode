@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="file" id="Files" name="files[]" multiple />
+<div id="Lists"></div>
+</body>
+</html>
+<script>
+    function fileSelect(e) {
+        e = e || window.event;
+
+        var files = e.target.files;  //FileList Objects
+        console.log(files.length);
+        var output = [];
+
+        for(var i = 0, f; f = files[i]; i++) {
+            output.push('<li><strong>' + f.name + '</strong>(' + f.type + ') - ' + f.size +' bytes</li>');
+        }
+
+        document.getElementById('Lists').innerHTML = '<ul>' + output.join('') + '</ul>';
+
+    }
+
+    if(window.File && window.FileList && window.FileReader && window.Blob) {
+        document.getElementById('Files').addEventListener('change', fileSelect, false);
+    } else {
+        document.write('您的浏览器不支持File Api');
+    }
+</script>

@@ -1,0 +1,88 @@
+.kaoshi-exam{
+  height: 100%;
+  body{
+    height: 100%;
+    background: #ffffff;
+    position: relative;
+    .header{
+      height: .91rem;
+      background: rgb(249,249,249);
+      font-family: "MicrosoftYaHeiLight";
+      font-size: .32rem;
+      padding: 0 .23rem;
+      span{
+        color: #4C4C4C;
+      }
+    }
+    .title{
+      width: 7.01rem;
+      height: 1.77rem;
+      margin:  .3rem auto .68rem;
+      background: url("../images/title.png") no-repeat;
+      background-size: 7.01rem auto;
+      div{
+        width: 6.25rem;
+        font-size: .36rem;
+        line-height: .54rem;
+        color: #ffffff;
+        padding: .36rem .47rem  0 .4rem;
+      }
+    }
+    .content{
+      margin: 0 .2rem .4rem;
+      .content-wrap{
+        position: relative;
+        input[type=radio]{
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: .7rem;
+          height: .7rem;
+          line-height: .7rem;
+          text-align: center;
+          border: 1px solid #D9D9D9;
+          border-radius: .35rem ;
+          background: transparent;  /*注意radio,checkbox在iphone有默认颜色*/
+        }
+        label {
+          padding-left: .33rem;
+          padding-top: .05rem;
+          font-size: .32rem;
+          line-height: .5rem;
+          color: #4C4C4C;
+        }
+        input[type='radio']:checked+span{
+          background:#ED7097;
+          color: #ffffff;
+        }
+        span{
+          width: .7rem;
+          height: .7rem;
+          line-height: .7rem;
+          text-align: center;
+          border: 1px solid #D9D9D9;
+          border-radius: .35rem ;
+          color: #a1a1a1;
+        }
+      }
+    }
+    .footer{
+      width: 100%;
+      height: 1.05rem;
+      border-top: 1px dashed #e1e1e1;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      span{
+        display: block;
+        height: 100%;
+        padding-top: .65rem;
+        margin: 0 auto;
+        text-align: center;
+        color: #ED7097;
+        background: url("../images/clock.gif") no-repeat center.14rem;
+        background-size: .43rem auto;
+      }
+    }
+  }
+}

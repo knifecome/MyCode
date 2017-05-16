@@ -1,0 +1,26 @@
+{
+    "code": 200,
+    "value": [
+            {
+                "title":"护考A计划.黄金考点",
+                "price": 298.00,
+                "count":1,
+                "id":"checkId1",
+                "isChecked":false
+            },
+            {
+                "title":"护考B计划.黄金考点",
+                "price": 398.00,
+                "count":1,
+                "id":"checkId2",
+                "isChecked":false
+            },
+            {
+                "title":"护考C计划.黄金考点",
+                "price": 498.00,
+                "count":1,
+                "id":"checkId3",
+                "isChecked":false
+            }
+        ]
+}

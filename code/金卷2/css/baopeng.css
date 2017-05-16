@@ -1,0 +1,96 @@
+.invite-baopeng {
+  height: 100%;
+  background: #F3F4F7;
+}
+.invite-baopeng body {
+  height: 12.09rem;
+  width: 7.5rem;
+  background: url("../images/bg4.png") no-repeat #F3F4F7;
+  background-size: 7.5rem auto;
+  border: 1px solid transparent;
+}
+.invite-baopeng body .longbox {
+  margin-top: 6.4rem;
+}
+.invite-baopeng body .longbox h3 {
+  padding-top: .32rem;
+  padding-bottom: .21rem;
+  line-height: .6rem;
+  font-size: .6rem;
+  color: #611088;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.invite-baopeng body .longbox p.yiyou {
+  line-height: .48rem;
+  font-size: .38rem;
+  color: #611088;
+  padding-bottom: .2rem;
+  text-align: center;
+}
+.invite-baopeng body .longbox p.yiyou em {
+  color: #8756A3;
+}
+.invite-baopeng body .longbox div {
+  margin: 0 .55rem;
+  overflow: hidden;
+}
+.invite-baopeng body .longbox div section {
+  float: left;
+  padding: 0 .35rem;
+}
+.invite-baopeng body .longbox div section span {
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  background: url("../images/touxiang1.png") no-repeat;
+  background-size: 1.4rem auto;
+  /*border: 3px solid #611218;*/
+}
+.invite-baopeng body .longbox div section span.active {
+  background: url("../images/touxiang2.png") no-repeat;
+  background-size: 1.4rem auto;
+}
+.invite-baopeng body .longbox div section em {
+  font-size: .3rem;
+  color: #1b1a1a;
+  display: block;
+  text-align: center;
+  margin-top: .05rem;
+  width: .9rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.invite-baopeng body .longbox div section strong {
+  font-style: normal;
+  font-weight: normal;
+  font-size: .2rem;
+  color: #709FED;
+  display: block;
+  text-align: center;
+}
+.invite-baopeng body .longbox .yiwen {
+  text-align: center;
+  margin: 0.2rem auto 0;
+  width: 5.84rem;
+  height: .35rem;
+  background: url("../images/qun.png") no-repeat;
+  background-size: 5.84rem .35rem;
+}
+.invite-baopeng body .longbox a.liji {
+  display: block;
+  width: 3.5rem;
+  height: .67rem;
+  background: url("../images/ganjin.png") no-repeat;
+  background-size: 3.5rem auto;
+  margin: .2rem auto .1rem;
+  text-indent: -9999px;
+}
+.invite-baopeng body .longbox span {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  font-size: .24rem;
+  color: #6B1F8F;
+}

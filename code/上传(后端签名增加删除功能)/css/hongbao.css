@@ -1,0 +1,176 @@
+.hongbao {
+  height: 100%;
+}
+.hongbao body {
+  width: 7.5rem;
+  height: 13.36rem;
+  background: #DD4B45;
+  border: 1px solid transparent;
+}
+.hongbao body header {
+  width: 7.49rem;
+  height: 8.3rem;
+  background: url("../images/bg1.png") no-repeat;
+  background-size: 7.49rem auto;
+  border: 1px solid transparent;
+}
+.hongbao body header .logo {
+  display: block;
+  width: 1.38rem;
+  height: .91rem;
+  margin: 0.8rem auto .5rem;
+  background: url("../images/logo.png") no-repeat;
+  background-size: 1.38rem auto;
+}
+.hongbao body header .bg_coin {
+  position: absolute;
+  left: 0;
+  top: 2.3rem;
+  width: 7.49rem;
+  height: 2.5rem;
+  background: url("../images/bg_coin.png") no-repeat;
+  background-size: 7.49rem auto;
+}
+.hongbao body header h1 {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 3.49rem;
+  background: url("../images/title.png") no-repeat center center;
+  background-size: auto 3.49rem;
+}
+.hongbao body header p {
+  margin-top: .8rem;
+  text-align: center;
+  font-size: .3rem;
+  color: #fff;
+  letter-spacing: 2px;
+}
+.hongbao body header p em {
+  color: #FFD22C;
+}
+.hongbao body header strong {
+  display: block;
+  text-align: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  line-height: 1.6rem;
+  color: #333;
+  font-size: .39rem;
+  margin: .5rem auto;
+  background: url("../images/button.png") no-repeat;
+  background-size: 1.6rem auto;
+}
+.hongbao body .share {
+  position: absolute;
+  left: 50%;
+  top: 9.5rem;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 1.5rem;
+  height: .7rem;
+  line-height: .7rem;
+  border: 1px solid #ffffff;
+  padding-left: .5rem;
+  color: #ffffff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.hongbao body .share span {
+  position: absolute;
+  left: .1rem;
+  top: .2rem;
+  width: .23rem;
+  height: .31rem;
+  background: url("../images/share2.png") no-repeat;
+  background-size: contain;
+}
+.hongbao body .zhongjiang {
+  width: 6.82rem;
+  height: .3rem;
+  margin: 2.3rem auto 0;
+  background: url("../images/zhongjiang_line.png") no-repeat;
+  background-size: 6.82rem auto;
+}
+.hongbao body .huojiang {
+  width: 100%;
+  height: 1.6rem;
+  overflow: hidden;
+  position: relative;
+  margin-top: .6rem;
+}
+.hongbao body .huojiang ul {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.hongbao body .huojiang ul li {
+  width: 100%;
+  height: .4rem;
+  line-height: .4rem;
+  font-size: .23rem;
+  padding: 0 .2rem;
+  color: #F7CA2B;
+}
+.hongbao body .modal-wrap {
+  display: none;
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+.hongbao body .modal {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 4;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 6.2rem;
+  height: 4rem;
+  background: #fff;
+}
+.hongbao body .modal span {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  background: url("../images/yes.png") no-repeat;
+  background-size: 2rem auto;
+  margin: -1rem auto 0;
+}
+.hongbao body .modal .gongxi {
+  text-align: center;
+  color: #E35751;
+  font-size: .5rem;
+  margin-top: .3rem;
+}
+.hongbao body .modal .success {
+  text-align: center;
+  font-size: .36rem;
+  padding-top: .2rem;
+  color: #333;
+}
+.hongbao body .modal .confirm {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1rem;
+  line-height: 1rem;
+  background: #E35751;
+  text-align: center;
+}

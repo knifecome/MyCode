@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" class="invite-account">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>账户</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/account.css"/>
+    <script src="js/mediaquery2.js"></script>
+    <script src="js/zepto.min.js"></script>
+</head>
+<body>
+    <section class="shortbox">
+        <h1></h1>
+        <p>已自动存入医护之家139****8880</p>
+        <a href="#" class="open">打开2017护考秘卷</a>
+    </section>
+    <section class="modal-wrap"></section>
+    <section class="modal">
+        <p>苹果手机功能即将开放<br/>敬请期待~</p>
+    </section>
+</body>
+</html>
+<script>
+    $(function(){
+        var u = navigator.userAgent;
+        //var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isiOS){
+            $('.modal-wrap').css('display','block');
+            $('.modal').css('display','block');
+        }
+        else{
+            return;
+        }
+        /*$('.open').on('touchend',function(e){
+            e.stopPropagation();
+            if(isiOS){
+                $('.modal-wrap').css('display','block');
+                $('.modal').css('display','block');
+            }
+            else{
+                return;
+            }
+        });*/
+
+       /* $(document).on('touchend',function(){
+            $('.modal-wrap').css('display','none');
+            $('.modal').css('display','none');
+        })*/
+    })
+</script>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" class="invite-form">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>邀请</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/form.css"/>
+    <script src="js/mediaquery2.js"></script>
+    <script src="js/zepto.min.js"></script>
+</head>
+<body >
+    <section class="longbox">
+        <section class="h1">
+            <div>
+                <p class="reg">已注册成功的小伙伴</p>
+                <section class="touxiang">
+                    <p class="">
+                        <span class="active"></span>
+                        <em>周某某sajdijsdij</em>
+                    </p>
+                    <p class="">
+                        <span></span>
+                        <em>周某某jdsahdhuds</em>
+                    </p>
+                    <p class="">
+                        <span></span>
+                        <em>周某某hasudhaudh</em>
+                    </p>
+                    <p class="">
+                        <span></span>
+                        <em>周某某ajsdd</em>
+                    </p>
+                    <p class="">
+                        <span></span>
+                        <em>周某某dasdjiad</em>
+                    </p>
+                </section>
+                <section class="touxiang">
+                    <p class="">
+                        <span></span>
+                        <em>周某某asudhasduh</em>
+                    </p>
+                    <p class="">
+                        <span></span>
+                        <em>周某某asdhuadshu</em>
+                    </p>
+                    <p class="">
+                        <span></span>
+                        <em>周某某ssadhuiahsd</em>
+                    </p>
+                    <p class="">
+                        <span></span>
+                        <em>周某某asdjoadsi</em>
+                    </p>
+                    <p class="">
+                        <span></span>
+                        <em>周某某asdjoadijoi</em>
+                    </p>
+                </section>
+            </div>
+        </section>
+        <form>
+            <div class="invite">
+                <p>邀请10位好友注册下载医护之家及报名成功护考终极班</p>
+            </div>
+            <input type="button" value="点立刻分享" class="login">
+            <span class="shouzhi"></span>
+        </form>
+    </section>
+    <section class="modal-wrap"></section>
+    <section class="modal">
+        <p>提示</p>
+        <p class="bianliang"></p>
+        <p>确定</p>
+    </section>
+    <section class="noInternet">
+        请求失败，请检查网络
+    </section>
+</body>
+</html>
+<script>
+    $(function(){
+        /*验证手机*/
+        function checkPhone(){
+            var phone = $('#phone').val();
+            if(!(/^1[34578]\d{9}$/.test(phone))){
+                return 0;
+            }else{
+                return 1;
+            }
+        }
+
+        //当网络掉线的时候，应该显示提示文字
+        window.onoffline = function(){
+            $('.noInternet').show(200);
+        };
+
+        //当网络上线的时候，应该隐藏提示文字
+        window.ononline = function(){
+            $('.noInternet').hide(200);
+        };
+
+        /*最终验证*/
+        /*$('.login').on('touchend',function(e){
+            e.stopPropagation();
+            if(window.navigator.onLine){
+                if(!checkPhone()){
+                    showModal();
+                    $('.bianliang').html("手机号码位数不对");
+                    return;
+                }
+                var phone=$('#phone').val();
+                $.ajax({
+                    url : 'https://api.test.yihuzhijia.cn/jinjuan/status',
+                    type : 'post',
+                    async : true,
+                    data : {phone : phone},
+                    dataType : 'json',
+                    success : function(data){
+                        if(data.code == 400){
+                            $('#phone').css('display','none');
+                            $('.alert').css("display",'block');
+                        }
+                    }
+                });
+                /!*var data = {
+                    "code":400,
+                    "data":""
+                };
+                if(data.code == 400){
+                   $('#phone').css('display','none');
+                    $('.alert').css("display",'block');
+                }*!/
+            }
+            else{
+                showModal();
+                $('.bianliang').html("请求失败,请检查网络");
+                $('.noInternet').show(200);
+            }
+        });*/
+
+
+
+        /*消除模态框*/
+        $(document).on('touchend',function(e){
+            hideModal();
+        });
+
+        //弹出模态框
+        function showModal(){
+            $('.modal-wrap').css('display',"block");
+            $('.modal').css('display',"block");
+        };
+
+        //关闭模态框
+        function hideModal(){
+            $('.modal-wrap').css('display',"none");
+            $('.modal').css('display',"none");
+        };
+
+    })
+</script>

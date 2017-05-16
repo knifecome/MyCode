@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的奖品</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/myward.css"/>
+    <script src="js/mediaquery2.js"></script>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/ajax.js"></script>
+    <script src="js/underscore.js"></script>
+    <script>
+        $(function(){
+             $.ajax({
+                url : 'http://192.168.0.76:8080/prize/getList',
+                type : 'get',
+                async : true,
+                dataType : 'jsonp',
+                success : function(data){
+                    console.log(data);
+                        if(data.code ==200){
+                            alert("请重新刷新页面");
+                }
+             for(var i=0;i<data[0].value.length;i++){
+             //console.log(data.value[i].name)
+                var name = data[0].value[i].name;
+                var count = data[0].value[i].count;
+                    switch(name){
+                        case '10元券':
+                            $("#tenyuan").html(count);
+                            break;
+                        case '20元券':
+                            $("#twoyuan").html(count);
+                            break;
+                        case '50元券':
+                            $("#fiveyuan").html(count);
+                            break;
+                        case '大福袋':
+                            var templateString1 = document.getElementById("moban1").innerHTML;
+                            _.templateSettings = {
+
+                                interpolate : /\{\{(.+?)\}\}/g
+
+                            };
+                            var dictionary1 = {
+                                "type" : "大福袋"
+                            };
+                            var compiled = _.template(templateString1);
+                            var compiledString = compiled(dictionary1);
+                                console.log(compiledString);
+                                for(var j=0; j < count;j++){
+                                    $(".wrapper").append(compiledString);
+                                }
+                            break;
+                            case '小福袋':
+                                var templateString2 = document.getElementById("moban2").innerHTML;
+                                _.templateSettings = {
+
+                                    interpolate : /\{\{(.+?)\}\}/g
+
+                                };
+                                var dictionary2 = {
+                                    "type" : "小福袋"
+                                };
+                                var compiled = _.template(templateString2);
+                                var compiledString = compiled(dictionary2);
+                                console.log(compiledString);
+                                for(var j=0; j < count;j++){
+                                    $(".wrapper").append(compiledString);
+                                }
+                            break;
+                    }
+                }
+             }
+         });
+    })
+
+    </script>
+</head>
+<body>
+<section class="myaward">
+        <section class="blank"></section>
+        <section class="wrapper">
+            <section class="price">
+                <p>奖品</p>
+                <p>红包</p>
+                <p class="flex sa ac">
+                    <em class="flex col ac gift"><span class="ten"></span><em>10元红包</em><strong>( x<em id="tenyuan">0</em> )</strong> </em>
+                    <em class="flex col ac gift"><span class="twenty"></span><em>20元红包</em><strong>( x<em id="twoyuan">0</em> )</strong></em>
+                    <em class="flex col ac gift"><span class="fifty"></span><em>50元红包</em><strong>( x<em id="fiveyuan">0</em> )</strong></em>
+                </p>
+                <div>说明</div>
+                <div>红包只可用于购买福袋时抵用现金</div>
+                <div>每一个福袋限使用一个现金红包</div>
+            </section>
+            <script type="text/template" id="moban1">
+                <section class="big">
+                    <p>{{type}}</p>
+                    <span style="text-decoration: line-through;color: red"><em>市场价:358元</em></span>
+                    <p>团购价:248元</p>
+                    <div class="product">
+                        <div class="fir flex sa">
+                            <div class="box flex col ac">
+                                <img src="images/pro1.png" alt=""/>
+                                <em>韩国进口 春雨面膜</em>
+                                <em>(10片)</em>
+                            </div>
+                            <div class="box flex col ac">
+                                <img src="images/pro2.png" alt=""/>
+                                <em>资生堂专科洗面奶</em>
+                                <em>(1支)</em>
+                            </div>
+                            <div class="box flex col ac">
+                                <img src="images/pro3.png" alt=""/>
+                                <em>DHC唇膏</em>
+                                <em>(1支)</em>
+                            </div>
+                        </div>
+                        <div class="fir flex sa" style="padding-top: .2rem">
+                            <div class="box flex col ac">
+                                <img src="images/pro4.png" alt=""/>
+                                <em>狮王洗白牙膏</em>
+                                <em>(1支)</em>
+                            </div>
+                            <div class="box flex col ac">
+                                <img src="images/pro5.png" alt=""/>
+                                <em>资生堂发膜</em>
+                                <em>(1瓶)</em>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="" class="join">立刻参加团购</a>
+                    <p class="note">红包可用于团购福袋时抵扣现金使用</p>
+                </section>
+            </script>
+            <script type="text/template" id="moban2">
+                <section class="big">
+                    <p>{{type}}</p>
+                    <span style="text-decoration: line-through;color: red"><em>市场价:218元</em></span>
+                    <p>团购价:158元</p>
+                    <div class="product">
+                        <div class="fir flex sa">
+                            <div class="box flex col ac">
+                                <img src="images/pro1.png" alt=""/>
+                                <em>春雨面膜</em>
+                                <em>(1片)</em>
+                            </div>
+                            <div class="box flex col ac">
+                                <img src="images/pro2.png" alt=""/>
+                                <em>春雨面膜</em>
+                                <em>(1片)</em>
+                            </div>
+                            <div class="box flex col ac">
+                                <img src="images/pro3.png" alt=""/>
+                                <em>春雨面膜</em>
+                                <em>(1片)</em>
+                            </div>
+                        </div>
+                        <div class="fir flex sa" style="padding-top: .2rem">
+                            <div class="box flex col ac">
+                                <img src="images/pro4.png" alt=""/>
+                                <em>春雨面膜</em>
+                                <em>(1片)</em>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="" class="join">立刻参加团购</a>
+                    <p class="note">红包可用于团购福袋时抵扣现金使用</p>
+                </section>
+            </script>
+        </section>
+
+        <footer>
+            <p>
+                <a href="turn.html">前往抽奖页面</a>
+            </p>
+        </footer>
+</section>
+
+</body>
+</html>

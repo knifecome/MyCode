@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" class="xinren">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no"/>
+    <title>账户</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/xinren.css"/>
+    <script src="js/mediaquery2.js"></script>
+    <script src="js/zepto.min.js"></script>
+</head>
+<body>
+<h1><img src="img/title2.png" alt=""/></h1>
+<section class="chongci">
+
+</section>
+<a href="javascript:;" class="zuoti"></a>
+<section class="noInternet">
+    请求失败，请检查网络
+</section>
+</html>
+<script>
+    $(function(){
+        //当网络掉线的时候，应该显示提示文字
+        window.onoffline = function(){
+            $('.noInternet').show(200);
+        };
+
+        //当网络上线的时候，应该隐藏提示文字
+        window.ononline = function(){
+            $('.noInternet').hide(200);
+        };
+
+        /*弹出表单*/
+        $('.zuoti').on('touchend',function(e){
+            e.stopPropagation();
+        });
+    })
+</script>

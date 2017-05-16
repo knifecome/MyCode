@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" class="form">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no"/>
+    <title></title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <script src="js/mediaquery2.js"></script>
+    <script src="js/zepto.min.js"></script>
+</head>
+<body>
+    <h1>2017护考预测金卷</h1>
+    <p class="p1">护考通过神器</p>
+    <div class="tishi"> <span></span>护考金卷，连续6年押中原题 不过第二年免费学</div>
+    <div class="photo">
+        <img src="images/test1.png" alt=""/>
+        <img src="images/test2.png" alt=""/>
+        <img src="images/test3.png" alt=""/>
+        <img src="images/test4.png" alt=""/>
+        <img src="images/test5.png" alt=""/>
+    </div>
+    <div class="end">
+        <p> <span></span>我是《医护之家》护考辅导老师 <br/> 我们已成功辅导100万学生顺利通过护考</p>
+    </div>
+    <div class="biaodan">
+        <form action="http://192.168.0.76:8080/teacher/make" method="get">
+            <input type="number" placeholder="输入您的手机号码" class="text1" id="phone" name="phone">
+            <div class="yanzheng" style="vertical-align: bottom">
+                <input type="number" placeholder="输入短信验证码" class="text2" id="verification" name="vertify">
+                <input type="button" class="query" value="获取验证码">
+            </div>
+            <input type="password" placeholder="设置密码" id="pw" name="pwd">
+        </form>
+        <a href="javascript:;" class="anniu">点击立刻获得</a>
+        <a href="javascript:;" class="login">点击立刻获得</a>  <!--注册-->
+        <a href="javascript:;" class="login2">点击立刻获得</a> <!--老用户登录-->
+    </div>
+    <section class="modal-wrap"></section>
+    <section class="modal">
+        <p>提示</p>
+        <p class="bianliang"></p>
+        <p>确定</p>
+    </section>
+    <section class="modal-wrap3" id="modal-wrap3">
+
+    </section>
+    <section class="wrap3" id="wrap3">
+        <p class="title3">很遗憾</p>
+        <p class="msg3">用户名不存在或密码错误</p>
+        <a href="javascript:;" class="link">确定</a>
+    </section>
+    <section class="noInternet">
+        请求失败，请检查网络
+    </section>
+    <!--小菊花-->
+    <section class="loading-modal"></section>
+    <section class="loading"></section>
+</body>
+</html>
+<script>
+    $(function(){
+        /*验证手机*/
+        function checkPhone(){
+            var phone = $('#phone').val();
+            if(!(/^1[34578]\d{9}$/.test(phone))){
+                return 0;
+            }else{
+                return 1;
+            }
+        }
+        /*验证密码1 密码不能为空*/
+        function verpwd1(){
+            var pw = $('#pw').val();
+            if(pw.length){
+                return 1;
+            }else{
+                return 0;
+            }
+        }
+        /*验证密码2,6到16位数字字母下划线*/
+        function verpwd2(){
+            var pw = $('#pw').val();
+            if((/^.{6,16}$/.test(pw))){
+                return 1;
+            }else{
+                return 0;
+            }
+        }
+
+        /*验证码6位数字*/
+        function verificate(){
+            var verification = $('#verification').val();
+            if(!(/^\d{6}$/.test(verification))){
+                return 0;
+            }else{
+                return 1;
+            }
+        }
+
+        //当网络掉线的时候，应该显示提示文字
+        window.onoffline = function(){
+            $('.noInternet').show(200);
+        };
+
+        //当网络上线的时候，应该隐藏提示文字
+        window.ononline = function(){
+            $('.noInternet').hide(200);
+        };
+
+
+        //展开列表
+        $('.anniu').on('touchend',function(e){
+            e.stopPropagation();
+            $('.biaodan').css({'height':'4rem'});
+            $('.biaodan').css({'margin-top':'1px'});
+            $('form').css('display','block');
+            $('.anniu').css('display','none');
+            $('.login').css('display','block');
+        });
+
+        /*获取验证码*/
+        var isLock = false;
+        var isvertify = false;
+        $('.query').on('touchend',function(e){
+            e.stopPropagation();
+            if(!checkPhone()){
+                showModal();
+                $('.bianliang').html("手机号码位数不对");
+                return;
+            };
+            if(isLock){
+                return;
+            };
+            var phone = $('#phone').val();
+            /* var code=404;
+             if(code == 400){
+             $('.yanzheng').css('display','none');
+             $('.login').css("display","none");
+             $('.login2').css("display","block");
+             isvertify = true;
+             return;
+             }*/
+            $.ajax({
+                url : 'http://192.168.0.76:8080/sms/get',
+                type : 'post',
+                async : true,
+                data : {phone : phone,type : 'register'},
+                dataType : 'json',
+                //小菊花
+                beforeSend: function(){
+                    showloading()
+                },
+                complete:function(){
+                    hideloading();
+                },
+                success : function(data){
+                     if(data.code == 400){
+                     $('.yanzheng').css('display','none');
+                     $('.login').css("display","none");
+                     $('.login2').css("display","block");
+                     isvertify = true;
+                     return;
+                     }
+                }
+            });
+            var seconds = 300;
+            $(".query").val(""+seconds+"S后重新获取");
+            var timer=setInterval(function(){
+                seconds--;
+                if(seconds < 1){
+                    clearInterval(timer);
+                    $('.query').val('获取验证码');
+                    isLock = false;
+                    return;
+                }
+                $(".query").val(""+seconds+"S后重新获取");
+                isLock = true;
+            },1000);
+        });
+
+        /*新用户注册*/
+        $('.login').on('touchend',function(e){
+            e.stopPropagation();
+            if(window.navigator.onLine){
+                if(!checkPhone()){
+                    showModal();
+                    $('.bianliang').html("手机号码位数不对");
+                    return;
+                }
+                if(!verpwd1()){
+                    showModal();
+                    $('.bianliang').html("输入密码不能为空");
+                    return;
+                }
+                if(!verpwd2()){
+                    showModal();
+                    $('.bianliang').html("密码必须在6~16位");
+                    return;
+                }
+                if(!isvertify){
+                    if(!verificate()){
+                        showModal();
+                        $('.bianliang').html("请输入6位验证码");
+                        return;
+                    }
+                }
+                var phone = $('#phone').val();
+                var code = $('#verification').val();
+                var password = $("#pw").val();
+
+                //使用ajax方法发请求
+                $.ajax({
+                    url : 'http://192.168.0.76:8080/baoguo/register',
+                    type : 'post',
+                    async : true,
+                    data : {phone : phone,code : code,password :password},
+                    dataType : 'json',
+                    success : function(data){
+                        console.log(data);
+                        if(data.code == 200){
+                            var userId = data.msg;
+                            var urladd = "product.html?userId="+userId+"";
+                            location.href = urladd;
+
+                        }
+                    },
+                    //小菊花
+                    beforeSend: function(){
+                        showloading();
+                    },
+                    complete:function(){
+                        hideloading();
+                    }
+                });
+
+            }
+            else{
+                showModal();
+                $('.bianliang').html("请求失败,请检查网络");
+                $('.noInternet').show(200);
+            }
+        });
+
+        //老用户登录
+        $('.login2').on("touchend",function(e){
+            e.stopPropagation();
+            if(!checkPhone()){
+                showModal();
+                $('.bianliang').html("手机号码位数不对");
+                return;
+            }
+            if(!verpwd1()){
+                showModal();
+                $('.bianliang').html("输入密码不能为空");
+                return;
+            }
+            if(!verpwd2()){
+                showModal();
+                $('.bianliang').html("密码必须在6~16位");
+                return;
+            }
+
+            var phone = $('#phone').val();
+            var password = $("#pw").val();
+
+            $.ajax({
+                url : 'http://192.168.0.76:8080/baoguo/login',
+                type : 'post',
+                async : true,
+                data : {phone : phone,password :password},
+                dataType : 'json',
+                success : function(data){
+                    console.log(data);
+                    if(data.code == 200){
+                        var userId = data.msg;
+                        var urladd = "product.html?userId="+userId+"";
+                        location.href=urladd;
+                    }else if(data.code == 401){
+                        showModal3();
+                        $('.title3').css('display','none');
+                        $('.msg3').html('此用户已经是金卷用户，不需要再次购买');
+                        $('.msg3').css('padding','.4rem .3rem');
+                    }else{
+                        showModal3();
+                    }
+                },
+                //小菊花
+                beforeSend: function(){
+                    showloading()
+                },
+                complete:function(){
+                    hideloading();
+                }
+            });
+        });
+
+        /*消除模态框*/
+        $(document).on('touchend',function(e){
+            hideModal();
+            hideModal3();
+        });
+
+        //弹出模态框
+        function showModal(){
+            $('.modal-wrap').css('display',"block");
+            $('.modal').css('display',"block");
+        };
+
+        function showModal2(){
+            $('.modal-wrap2').css('display',"block");
+            $('.wrap2').css('display',"block");
+        };
+
+        function showModal3(){
+            $('.modal-wrap3').css('display',"block");
+            $('.wrap3').css('display',"block");
+        };
+
+        //关闭模态框
+        function hideModal(){
+            $('.modal-wrap').css('display',"none");
+            $('.modal').css('display',"none");
+        };
+
+        function hideModal2(){
+            $('.modal-wrap2').css('display',"none");
+            $('.wrap2').css('display',"none");
+        };
+
+        function hideModal3(){
+            $('.modal-wrap3').css('display',"none");
+            $('.wrap3').css('display',"none");
+        };
+
+        /*弹出小菊花*/
+        function showloading(){
+            $('.loading-modal').css('display',"block");
+            $('.loading').css('display',"block");
+        }
+
+        /*隐藏小菊花*/
+        function hideloading(){
+            $('.loading-modal').css('display',"none");
+            $('.loading').css('display',"none");
+        }
+
+    })
+</script>

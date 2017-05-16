@@ -1,0 +1,124 @@
+.invite-account {
+  height: 100%;
+  background: #F3F4F7;
+}
+.invite-account body {
+  width: 7.5rem;
+  height: 12.09rem;
+  background: url("../images/bg2.png") no-repeat;
+  background-size: 7.5rem auto;
+  padding-top: 4.48rem;
+}
+.invite-account .listitem {
+  position: absolute;
+  left: 50%;
+  top: 4rem;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 6.27rem;
+  height: 2.02rem;
+  border: 3px solid #580081;
+  border-radius: 20px;
+  color: #601086;
+}
+.invite-account .listitem h3 {
+  font-size: .3rem;
+  text-align: center;
+  line-height: .5rem;
+}
+.invite-account .listitem .huojiang {
+  width: 100%;
+  height: 1.2rem;
+  overflow: hidden;
+  position: relative;
+}
+.invite-account .listitem .huojiang ul {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.invite-account .listitem .huojiang ul li {
+  width: 100%;
+  height: .4rem;
+  line-height: .4rem;
+  font-size: .24rem;
+  padding: 0 .2rem;
+}
+.invite-account .listitem .huojiang ul li em {
+  float: right;
+}
+.invite-account .listitem .huojiang ul li:nth-of-type(2n+1) {
+  background: #ECE1FF;
+  border-radius: 5px;
+}
+.invite-account .shortbox {
+  width: 7.5rem;
+  height: 7.02rem;
+  text-align: center;
+}
+.invite-account .shortbox h1 {
+  padding-top: 3.15rem;
+  font-size: .6rem;
+  line-height: 1rem;
+  color: #580081;
+}
+.invite-account .shortbox p.yizidong {
+  font-size: .36rem;
+  line-height: .6rem;
+  margin-bottom: 0.68rem;
+  text-align: center;
+  color: #580081;
+}
+.invite-account .shortbox .yiwen {
+  text-align: center;
+  margin: 0 auto .2rem;
+  width: 5.84rem;
+  height: .35rem;
+  background: url("../images/qun.png") no-repeat;
+  background-size: 5.84rem .35rem;
+}
+.invite-account .shortbox a {
+  display: inline-block;
+  width: 3.5rem;
+  height: .67rem;
+  background: url("../images/open.png") no-repeat;
+  background-size: 3.5rem auto;
+  text-indent: -9999px;
+}
+.invite-account .modal-wrap {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+.invite-account .modal {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 6rem;
+  height: 3rem;
+  background: #ffffff;
+  text-align: center;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+}
+.invite-account .modal p:nth-of-type(1) {
+  font-size: .36rem;
+  line-height: 1.5rem;
+}

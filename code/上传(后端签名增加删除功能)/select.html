@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" class="select">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <title>新选择</title>
+    <link rel="stylesheet" href="./css/reset.css"/>
+    <link rel="stylesheet" href="./css/select.css">
+    <script src="./js/mediaquery2.js"></script>
+    <script src="./js/jquery-1.12.3.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>-->
+    <script src="./js/underscore.js"></script>
+</head>
+<body>
+<section class="card">
+    <form name=theform style="display: none">
+        <input type="radio" name="myradio" value="local_name" checked=true/> 上传文件名字保持本地文件名字
+        <input type="radio" name="myradio" value="random_name"> 上传文件名字是随机文件名
+        <br/>
+        上传到指定目录:<input type="text" id='dirname'  value="upload/" size=50>
+    </form>
+    <select id="test">
+        <option value="1">第一批</option>
+        <option value="2">第二批</option>
+        <option value="3">第三批</option>
+        <option value="4">第四批</option>
+        <option value="5">第五批</option>
+        <option value="6">第六批</option>
+    </select>
+    <p>上传图片 (最多可上传9张)</p>
+
+    <div id="container">
+        <a id="postfiles" href="javascript:void(0);" class='submit btn' style="display: none" ></a>
+        <a id="selectfiles" href="javascript:void(0);" class='btn'>选择文件</a>
+    </div>
+
+    <div class="box" id="ossfile"></div>
+
+</section>
+<footer>
+    <!--<a id="postfiles" href="javascript:void(0);" class='submit btn'>提交</a>-->
+    <a id="submit" href="javascript:void(0);" class='submit btn'>提交</a>
+    <a href="javascript:;" class="share btn">分享</a>
+</footer>
+
+<section class="modal-wrap"></section>
+<section class="modal">
+    <span></span>
+    <p class="up_success">上传成功,请等待审核</p>
+    <div class="info">每天17点 -19点我们将在APP开放红包领取入口,记得来领取你的红包哦~</div>
+    <a href="javascript:;" class="confirm">确定</a>
+</section>
+
+<!--小菊花-->
+<section class="loading-modal"></section>
+<section class="loading"></section>
+
+<!--提示框-->
+<section class="alertbox"></section>
+
+<!--模态框 确认删除模态框-->
+<!--<script type="text/template" id="moban1">-->
+    <!--<section class="modal-wrap3" id="modal-wrap3"></section>-->
+    <!--<section class="wrap3" id="wrap3">-->
+        <!--<div id="tishi">提示</div>-->
+        <!--<div id="shanchu">确认删除这条图片?</div>-->
+        <!--<div class="btn"><input type="button" value="确定" id="btn-confirm"><input type="button" value="取消" id="btn-cancel"></div>-->
+    <!--</section>-->
+<!--</script>-->
+
+
+</body>
+</html>
+<script type="text/javascript" src="lib/crypto1/crypto/crypto.js"></script>
+<script type="text/javascript" src="lib/crypto1/hmac/hmac.js"></script>
+<script type="text/javascript" src="lib/crypto1/sha1/sha1.js"></script>
+<script type="text/javascript" src="lib/base64.js"></script>
+<script type="text/javascript" src="lib/plupload-2.1.2/js/plupload.full.min.js"></script>
+<script type="text/javascript" src="upload.js"></script>
+<script>
+
+
+
+
+    function deletePic() {
+        var deleteBox=document.querySelectorAll('.deleteBox');
+        var len=deleteBox.length;
+        console.log(len);
+        for(var i=0; i<len; i++){
+            deleteBox[i].onclick = function(){
+                //删除对应的li，即：this.parentNode
+                this.parentNode.parentNode.removeChild(this.parentNode);
+            }
+        }
+    }
+</script>
+

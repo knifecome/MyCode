@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" class="invite-form">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no" />  <!--iphone上不将电话号码设为电话号码-->
+    <title>输入号码</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/form.css"/>
+    <script src="js/mediaquery2.js"></script>
+    <script src="js/zepto.min.js"></script>
+    <style>
+        #haomao{
+            background: #FAF2E5;
+        }
+    </style>
+</head>
+<body id="haomao">
+    <section class="longbox" style="margin-top: 1rem">
+        <form action="http://192.168.0.76:8080/teacher/make" method="get">
+            <input type="number" placeholder="输入您的手机号码" class="text1" id="phone" name="telephone">
+            <input type="button" value="生成" class="login3">
+        </form>
+    </section>
+    <section class="modal-wrap"></section>
+    <section class="modal">
+        <p>提示</p>
+        <p class="bianliang"></p>
+        <p>确定</p>
+    </section>
+    <!--小菊花-->
+    <section class="loading-modal"></section>
+    <section class="loading"></section>
+</body>
+</html>
+<script>
+    $(function(){
+        /*验证手机*/
+        function checkPhone(){
+            var phone = $('#phone').val();
+            if(!(/^1[34578]\d{9}$/.test(phone))){
+                return 0;
+            }else{
+                return 1;
+            }
+        }
+
+        /*最终验证*/
+        $('.login3').on('click',function(e){
+            e.stopPropagation();
+                if(!checkPhone()){
+                    showModal();
+                    $('.bianliang').html("手机号码位数不对");
+                    return;
+                }
+            $('form').submit();
+        });
+
+
+
+        /*消除模态框*/
+        $(document).on('click',function(e){
+            hideModal();
+        });
+
+        //弹出模态框
+        function showModal(){
+            $('.modal-wrap').css('display',"block");
+            $('.modal').css('display',"block");
+        };
+
+
+
+        //关闭模态框
+        function hideModal(){
+            $('.modal-wrap').css('display',"none");
+            $('.modal').css('display',"none");
+        };
+
+
+
+    })
+</script>

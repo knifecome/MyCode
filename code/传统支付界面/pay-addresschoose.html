@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" class="pay-confirm">
+<head>
+    <meta charset="UTF-8">
+    <title>14-选择地址</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/pay-confirm.css"/>
+    <script src="js/mediaquery2.js"></script>
+    <script src="js/zepto.min.js"></script>
+</head>
+<body>
+<form action="">
+    <section class="line"></section>
+    <section class="address-confirm flex">
+        <div class="box1 flex ac">
+            <input type="radio" id="checkbox1" name="checkbox"><label for="checkbox1"></label>
+        </div>
+        <div class="box2">
+            <p class="flex sb">昵称昵称昵称 <span>158******065</span></p>
+            <p>新疆省呼和浩特市九龙坡区杨家坪万象城华润大厦B座11-2</p>
+        </div>
+    </section>
+    <section class="address-confirm flex">
+        <div class="box1 flex ac">
+            <input type="radio" id="checkbox2" name="checkbox"><label for="checkbox2"></label>
+        </div>
+        <div class="box2">
+            <p class="flex sb">昵称昵称昵称 <span>158******065</span></p>
+            <p>新疆省呼和浩特市九龙坡区杨家坪万象城华润大厦B座11-2</p>
+        </div>
+    </section>
+   <!-- <section class="address-confirm flex">
+        <div class="box1 flex ac">
+            <input type="checkbox" id="checkbox3" name="checkbox"><label for="checkbox3"></label>
+        </div>
+        <div class="box2">
+            <p class="flex sb">昵称昵称昵称 <span>158******065</span></p>
+            <p>新疆省呼和浩特市九龙坡区杨家坪万象城华润大厦B座11-2</p>
+        </div>
+    </section>
+    <section class="address-confirm flex">
+        <div class="box1 flex ac">
+            <input type="checkbox" id="checkbox4" name="checkbox"><label for="checkbox4"></label>
+        </div>
+        <div class="box2">
+            <p class="flex sb">昵称昵称昵称 <span>158******065</span></p>
+            <p>新疆省呼和浩特市九龙坡区杨家坪万象城华润大厦B座11-2</p>
+        </div>
+    </section>
+    <section class="address-confirm flex">
+        <div class="box1 flex ac">
+            <input type="checkbox" id="checkbox5" name="checkbox"><label for="checkbox5"></label>
+        </div>
+        <div class="box2">
+            <p class="flex sb">昵称昵称昵称 <span>158******065</span></p>
+            <p>新疆省呼和浩特市九龙坡区杨家坪万象城华润大厦B座11-2</p>
+        </div>
+    </section>
+    <section class="address-confirm flex">
+        <div class="box1 flex ac">
+            <input type="checkbox" id="checkbox6" name="checkbox"><label for="checkbox6"></label>
+        </div>
+        <div class="box2">
+            <p class="flex sb">昵称昵称昵称 <span>158******065</span></p>
+            <p>新疆省呼和浩特市九龙坡区杨家坪万象城华润大厦B座11-2</p>
+        </div>
+    </section>-->
+    <section class="dis30"></section>
+    <section class="add-address">添加新地址</section>
+    <!--<section class="dis670"></section>-->
+    <section class="last">
+        <footer class="addresschoose">
+            <input type="button" value="确认">
+        </footer>
+    </section>
+
+</form>
+</body>
+</html>
+<script>
+    $(function(){
+        $('.add-address').on('touchend',function(e){
+            e.stopPropagation();
+            location.href = 'pay-addressadd.html';
+        })
+    })
+</script>

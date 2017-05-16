@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form id="form1" runat="server">
+    <div>
+    </div>
+</form>
+</body>
+</html>
+<script type="text/javascript">
+    var array = new Array("55a60c9cbd11ceff4eec4358","55b0afe9bac698c559fce8dd", "55a60c9cbd11ceff4eec4358","55b0afe9bac698c559fce8dd","55a60c9cbd11ceff4eec4358","55b0afe9bac698c559fce8dd", "55b0afe9bac698c559fce83d");
+    var count = 1;
+    var yuansu= new Array();//存放数组array的不重复的元素比如{4,5,7,8,2,67,89,}
+    var sum = new Array(); //存放数组array中每个不同元素的出现的次数
+    for (var i = 0; i < array.length; i++) {
+        for(var j=i+1;j<array.length;j++)
+        {
+            if (array[i] == array[j]) {
+                count++;//用来计算与当前这个元素相同的个数
+                array.splice(j, 1); //没找到一个相同的元素，就要把它移除掉，
+                j--;
+            }
+        }
+        yuansu[i] = array[i];//将当前的元素存入到yuansu数组中
+        sum[i] = count;  //并且将有多少个当前这样的元素的个数存入sum数组中
+        count =1;  //再将count重新赋值，进入下一个元素的判断
+    }
+    var str = '';
+    //算出array数组中不同的元素出现的次数
+    for (var i = 0; i < yuansu.length; i++) {
+        str+=yuansu[i]+"出现的次数为："+sum[i]+"<br/>";
+    }
+
+
+
+    document.write(str);
+</script>

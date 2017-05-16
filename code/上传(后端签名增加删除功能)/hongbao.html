@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" class="hongbao">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <title>领取红包</title>
+    <link rel="stylesheet" href="http://cdn.yihuzhijia.cn/static/css/reset.css"/>
+    <link rel="stylesheet" href="./css/hongbao.css">
+    <script src="./js/mediaquery2.js"></script>
+    <script src="./js/jquery-1.12.3.min.js"></script>
+</head>
+<body>
+    <header>
+        <span class="logo"></span>
+        <div class="bg_coin"></div>
+        <h1></h1>
+        <p>你今天还有<em>3</em>次机会抽红包</p>
+        <strong id="chai">拆红包</strong>
+    </header>
+    <section class="share"><span></span>分享</section>
+    <section class="zhongjiang"></section>
+    <div class="huojiang">
+        <ul>
+            <li>150****8569 获得 护盾＊5 </li>
+            <li>138****1912手机充值卡＊50</li>
+            <li>139****0523 获得 手机话费＊20</li>
+            <li>132****7852 获得 护盾＊20</li>
+            <li>135****3147 获得 手机话费＊50</li>
+            <li>138****4201 获得 护盾＊20</li>
+            <li>132****3820 获得 手机话费＊50</li>
+        </ul>
+    </div>
+    <section class="modal-wrap"></section>
+    <section class="modal">
+        <span></span>
+        <p class="gongxi">恭喜您!</p>
+        <div class="success">成功获得护盾<em>19</em>个</div>
+        <a href="javascript:;" class="confirm">确定</a>
+    </section>
+</body>
+</html>
+<script>
+    /*轮播图*/
+    var ul = document.getElementsByTagName("ul")[0];
+    var lis = document.getElementsByTagName("li");
+
+    var length = lis.length;
+    ul.innerHTML += ul.innerHTML;
+
+    var idx = 0;
+    var num;
+    function move(){
+        idx++;
+        num=-40*idx/100+'rem';
+        $("ul").animate({"top" : num},600,function(){
+            if(idx > length-1){
+                idx = 0;
+                $(this).css("top",0);
+            }
+        });
+    }
+
+    setInterval(move, 1800);
+
+    /*拆红包*/
+    $('#chai').on('touchend',function (e) {
+        e.stopPropagation();
+        showModal();
+    });
+
+    $('.confirm').on('touchend',function (e) {
+        e.stopPropagation();
+        hideModal();
+    })
+
+    function showModal() {
+        $('.modal-wrap').css('display','block');
+        $('.modal').css('display','block')
+    }
+
+    function hideModal() {
+        $('.modal-wrap').css('display','none');
+        $('.modal').css('display','none')
+    }
+</script>

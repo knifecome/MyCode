@@ -1,0 +1,41 @@
+.pay-success .sucess-logo {
+  height: 3.82rem;
+  background: url("../images/pay-success.png") no-repeat center 0.6rem;
+  background-size: 1.6rem;
+  border-bottom: 1px solid #e1e1e1;
+}
+.pay-success .sucess-logo p {
+  padding-top: 2.3rem;
+  line-height: 1.52rem;
+  text-align: center;
+  font-size: .32rem;
+  color: #4c4c4c;
+  font-family: "Microsoft Yahei Light";
+}
+.pay-success .sucess-logo.fail {
+  background: url("../images/pay-fail.png") no-repeat center 0.6rem;
+  background-size: 1.6rem;
+}
+.pay-success .query {
+  padding-top: .4rem ;
+  padding-left: .54rem;
+}
+.pay-success .query a {
+  display: inline-block;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  width: 3rem;
+  height: .68rem;
+  line-height: .68rem;
+  text-align: center;
+  font-size: .3rem;
+  font-family: "Microsoft Yahei";
+  color: #a1a1a1;
+}
+.pay-success .query a:nth-of-type(1) {
+  margin-right: .4rem;
+}
+.pay-success .query a.check {
+  color: #ffffff;
+  background: #ED7097;
+}

@@ -1,0 +1,295 @@
+.product {
+  height: 100%;
+}
+.product body {
+  width: 7.5rem;
+  height: 13.36rem;
+  background: url("../images/bg.jpg") no-repeat;
+  background-size: 7.5rem auto;
+  border: 1px solid transparent;
+  position: relative;
+}
+.product body h1 {
+  font-size: .48rem;
+  color: #ffffff;
+  margin-top: .4rem;
+  text-align: center;
+}
+.product body .p1 {
+  width: 4.1rem;
+  height: .51rem;
+  line-height: .51rem;
+  background: rgba(255, 255, 255, 0.3);
+  font-size: .4rem;
+  color: #ffffff;
+  margin: .2rem auto 0;
+  text-align: center;
+}
+.product body .service {
+  width: 7.5rem;
+  height: 1rem;
+  line-height: 1rem;
+  background: #ffffff;
+  font-size: .3rem;
+  color: #333;
+  margin-top: .4rem;
+  padding-left: .8rem;
+  position: relative;
+}
+.product body .service span {
+  position: absolute;
+  left: .32rem;
+  top: .33rem;
+  width: .07rem;
+  height: .31rem;
+  background-color: #E48BA7;
+}
+.product body .hukao {
+  width: 7.5rem;
+  background: #ffffff;
+  font-size: .4rem;
+  color: #FF6D93;
+  text-align: center;
+  margin-top: 1px;
+  height: 2rem;
+  line-height: 2rem;
+}
+.product body .fachu {
+  font-size: .3rem;
+  color: #333;
+  text-align: center;
+}
+.product body .dl-wrap {
+  width: 7.5rem;
+  height: 1rem;
+  background: #ffffff;
+}
+.product body .dl {
+  display: block;
+  margin: 0 auto;
+  width: 6.9rem;
+  height: .71rem;
+  line-height: .71rem;
+  color: #fff;
+  font-size: .3rem;
+  text-align: center;
+  background: #FF6D93;
+}
+.product body .title1 {
+  width: 7.5rem;
+  height: 1rem;
+  line-height: 1rem;
+  background: #ffffff;
+  padding-left: .6rem;
+  margin: 0.65rem auto 1px;
+  font-size: .3rem;
+  color: #333;
+  position: relative;
+}
+.product body .title1 span {
+  position: absolute;
+  left: .32rem;
+  top: .33rem;
+  width: .07rem;
+  height: .31rem;
+  background-color: #E48BA7;
+}
+.product body .choose {
+  width: 7.5rem;
+  height: 1.21rem;
+  background: #ffffff;
+  margin: 0 auto;
+  padding-top: .05rem;
+}
+.product body .choose .content {
+  margin: 0 .5rem;
+}
+.product body .choose .content .content-wrap {
+  position: relative;
+  /*input[type='radio']:checked.wrong+span{
+            background:red;
+            color: #ffffff;
+          }
+          input[type='radio']:checked.right+span{
+            background:green;
+            color: #ffffff;
+          }*/
+}
+.product body .choose .content .content-wrap input[type=radio] {
+  position: absolute;
+  left: .09rem;
+  top: .12rem;
+  width: .22rem;
+  height: .22rem;
+  line-height: .7rem;
+  text-align: center;
+  border: 1px solid transparent;
+  border-radius: .35rem ;
+  background: transparent;
+  /*ע��radio,checkbox��iphone��Ĭ����ɫ*/
+}
+.product body .choose .content .content-wrap label {
+  padding-left: .5rem;
+  font-size: .24rem;
+  line-height: .5rem;
+  color: #333;
+  flex: 1;
+}
+.product body .choose .content .content-wrap input[type='radio']:checked + span {
+  background: #FF6D93;
+  color: #ffffff;
+}
+.product body .choose .content .content-wrap span {
+  position: absolute;
+  left: .09rem;
+  top: .12rem;
+  width: .22rem;
+  height: .22rem;
+  line-height: .7rem;
+  text-align: center;
+  border: 1px solid #999;
+  border-radius: .35rem ;
+  color: #a1a1a1;
+}
+.product body .choose .content .content-wrap span.correct {
+  background: green;
+  color: #ffffff;
+}
+.product body .title2 {
+  width: 7.5rem;
+  height: 1rem;
+  line-height: 1rem;
+  background: #ffffff;
+  padding-left: .6rem;
+  margin: .5rem auto 1px;
+  position: relative;
+}
+.product body .title2 span {
+  position: absolute;
+  left: .32rem;
+  top: .33rem;
+  width: .07rem;
+  height: .31rem;
+  background-color: #FF6D93;
+}
+.product body .blank {
+  width: 7.5rem;
+  height: 2.61rem;
+  background: #ffffff;
+  margin: 0 auto;
+  border: 1px solid transparent;
+}
+.product body .blank form {
+  padding-top: .1rem;
+}
+.product body .blank form input {
+  display: block;
+  width: 6.9rem;
+  height: .61rem;
+  border: 1px solid #666;
+  margin: .15rem auto;
+  padding-left: .16rem;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.product body .submit {
+  display: block;
+  width: 7.5rem;
+  height: .7rem;
+  line-height: .7rem;
+  color: #ffffff;
+  background: #FF6D93;
+  margin: .6rem auto 0;
+  text-align: center;
+}
+.product body footer {
+  position: absolute;
+  left: .3rem;
+  bottom: .8rem;
+}
+.product body footer p {
+  font-size: .3rem;
+  color: #666;
+  margin-bottom: .1rem;
+}
+.product body footer .teacher {
+  font-size: .24rem;
+  color: #666;
+}
+.product body footer .info {
+  font-size: .24rem;
+  color: #666;
+}
+.product body footer .info span {
+  margin-right: .2rem;
+}
+.product body .modal-wrap {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+.product body .modal {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 6rem;
+  height: 3rem;
+  background: #ffffff;
+  text-align: center;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+}
+.product body .modal p:nth-of-type(1) {
+  font-size: .36rem;
+  line-height: .8rem;
+}
+.product body .modal p:nth-of-type(2) {
+  font-size: .32rem;
+  line-height: 1.2rem;
+  border-bottom: 1px solid #e1e1e1;
+}
+.product body .modal p:nth-of-type(3) {
+  font-size: .36rem;
+  line-height: 1rem;
+}
+.product body .loading-modal {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.product body .loading {
+  display: block;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 1.05rem;
+  height: 1.04rem;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background: url("../images/loading.gif") no-repeat;
+  background-size: 1.05rem auto;
+}
+.product body.download {
+  height: 100%;
+}

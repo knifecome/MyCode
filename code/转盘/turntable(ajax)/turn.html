@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" class="turn">
+<head>
+    <meta charset="UTF-8">
+    <title>抽奖大转盘</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/turn.css"/>
+    <script src="js/zepto.min.js"></script>  <!--放在入口函数前-->
+    <script src="js/ajax.js"></script>
+    <script src="js/mediaquery2.js"></script>
+    <style>
+
+    </style>
+    <script>
+        $(function(){
+            var turntable = $("#turntable");
+            var pointer = $("#pointer");
+            var modal = $('#modal');
+            var modal2 = $('#modal2');
+            var click_count = 0;
+            var timer;
+
+            pointer.bind('click',function(e){
+                e.preventDefault();
+                click_count++;
+                //点击指针抽奖
+                var gifts = ['10元', '20元', '谢谢参与', '10元', '小福袋', '谢谢参与', '50元',"20元","谢谢参与","10元","大福袋","谢谢参与"];
+                var degrees = [15, 45, 75, 105, 135, 165, 195, 225, 255, 285,315,345];
+                //使用ajax方法发请求
+                $.ajax({
+                    url : 'http://192.168.0.76:8080/prize/addPrize',
+                    type : 'get',
+                    async : true,
+                    dataType : "jsonp",
+                    success : function(data){
+                        console.log(data);
+                        var gift_index = data[0].position;
+                        var num = data[0].count;
+                        $(".remain span").html(num);
+                        if(num < 1){
+                            pointer.unbind("click");
+                        }
+                        //所以需要转到的角度的索引值，就是奖品的索引值
+                        var degree_index = gift_index;
+
+                        //需要转到的角度为：degrees[degree_index];
+                        turntable.css("-webkit-transform",'rotate('+(10*click_count*360+degrees[degree_index])+'deg)');
+                        turntable.css("transform",'rotate('+(10*click_count*360+degrees[degree_index])+'deg)');
+
+
+
+                        //转完之后，弹出警示框
+                        clearTimeout(timer);
+                        timer = setTimeout(function(){
+                            //alert(gifts[gift_index]);
+                            $("#m-bg").addClass("m-bg");
+                            var gift=gifts[gift_index];
+                            switch(gift){
+                                case '10元':
+                                    modal.css("display","block");
+                                    modal.css("background-image","url(images/10yuan.png"+")");
+                                    break;
+                                case '20元':
+                                    modal.css("display","block");
+                                    modal.css("background-image","url(images/20yuan.png"+")");
+                                    break;
+                                case '50元':
+                                    modal.css("display","block");
+                                    modal.css("background-image","url(images/50yuan.png"+")");
+                                    break;
+                                case '小福袋':
+                                    modal.css("display","block");
+                                    modal.css("background-image","url(images/xiaofudai.png"+")");
+                                    break;
+                                case '大福袋':
+                                    modal.css("display","block");
+                                    modal.css("background-image","url(images/dafudai.png"+")");
+                                    break;
+                                default:
+                                    modal2.css("display","block");
+                                    modal2.css("background-image","url(images/sorry.png"+")");
+                                    break;
+                            }
+                        }, 3000);
+                    }
+                });
+
+
+               /* var num = $(".remain span").html();
+                num--;
+                if(num<1){
+                    pointer.unbind("click");
+                }
+                $(".remain span").html(num);*/
+            });
+
+
+
+            /*modal.click(function(){
+                $(this).css("display","none");
+                $("#m-bg").removeClass("m-bg");
+            });
+            modal2.click(function(){
+                $(this).css("display","none");
+                $("#m-bg").removeClass("m-bg");
+            });*/
+            /*$(".continue").click(function(){
+               $(this).parent().css("display","none");
+            })*/
+            $(document).click(function(e){
+                //var targetId = e.target.id;
+
+                /*if(targetId == "m-bg"){
+                    modal.css("display","none");
+                    modal2.css("display","none");
+                    $("#m-bg").removeClass("m-bg");
+                }*/
+                modal.css("display","none");
+                modal2.css("display","none");
+                $("#m-bg").removeClass("m-bg");
+            });
+            $(".continue").click(function(){
+                $(this).parent().css("display","none");
+                $("#m-bg").removeClass("m-bg");
+            })
+        })
+
+
+    </script>
+</head>
+<body>
+<section class="wrap">
+        <div class="flex sb list">
+            <a href="myaward.html" class="link price">我的奖品</a>
+            <a href="rule.html" class="link rule">活动规则</a>
+        </div>
+
+        <div id="turntable-wrapper">
+            <img src="images/turntable.png" alt="" id="turntable">
+            <img src="images/pointer.png" alt="" id="pointer">
+        </div>
+        <a class="chance" href="#">立刻分享获得<span>1</span>次抽奖机会</a>
+        <p class="remain">您还剩余<span>3</span>次抽奖机会</p>
+        <section id="m-bg">
+            <div id="modal">
+                <a href="" class="use">立刻使用</a>
+                <a href="javascript:;" class="continue">继续抽奖</a>
+            </div>
+            <div id="modal2">
+                <a href="myaward.html" class="share">立刻分享可获得1次抽奖机会</a>
+            </div>
+        </section>
+</section>
+
+</body>
+</html>

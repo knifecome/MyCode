@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" class="kaoshi-exam">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>考试界面</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/exam.css"/>
+    <script src="js/mediaquery2.js"></script>
+    <script src="js/zepto.min.js"></script>
+</head>
+<body>
+    <header class="header flex sb ac">
+        <span>单选</span>
+        <span><em>01</em>/99</span>
+    </header>
+    <section class="title">
+        <div>第一题 护理程序有关“护理程序”概 念的解释哪项不妥</div>
+    </section>
+    <section class="content flex">
+        <div>
+            <input type="radio" id="radio1" name="choose" ><label for="radio1">A</label>
+        </div>
+        <span>是指导护士工作及解决问题的工作方法</span>
+    </section>
+    <section class="content flex">
+        <div>
+            <input type="radio" id="radio2" name="choose"><label for="radio2">B</label>
+        </div>
+        <span>其目标是增进或恢复服务对象的健康</span>
+    </section>
+    <section class="content flex">
+        <div>
+            <input type="radio" id="radio3" name="choose"><label for="radio3">C</label>
+        </div>
+        <span>是以系统论为理论框架</span>
+    </section>
+    <section class="content flex">
+        <div>
+            <input type="radio" id="radio4" name="choose"><label for="radio4">D</label>
+        </div>
+        <span>是有计划、有决策与反馈功能的过程</span>
+    </section>
+    <section class="content flex">
+        <div>
+            <input type="radio" id="radio5" name="choose"><label for="radio5">E</label>
+        </div>
+        <span>是由估计、诊断、计划、实施四个步骤 组成</span>
+    </section>
+    <footer class="footer">
+        <span id="time"><em></em><em></em>:<em></em><em></em>:<em></em><em></em></span>
+    </footer>
+</body>
+</html>
+<script>
+    $(function(){
+        var time=document.getElementById('time');
+        var ems=time.getElementsByTagName('em');
+        var number=1.5*60*60;    //90分钟倒计时
+        var targettime=0;
+        var timer=setInterval(countdown,1000);
+        countdown();
+
+        function countdown(){
+            number--;
+            if(number<0)
+            {
+                clearInterval(timer);
+                return;
+            }
+            var hour=parseInt(number/60/60);   //时
+            var minute=parseInt(number/60)%60; //分
+            var second=number%60;              //秒
+
+            ems[0].innerHTML=parseInt(hour/10);
+            ems[1].innerHTML=hour%10;
+            ems[2].innerHTML=parseInt(minute/10);
+            ems[3].innerHTML=minute%10;
+            ems[4].innerHTML=parseInt(second/10);
+            ems[5].innerHTML=second%10;
+        }
+    })
+</script>

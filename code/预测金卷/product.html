@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" class="product">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no"/>
+    <title></title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/product.css"/>
+    <script src="js/mediaquery2.js"></script>
+    <script src="js/zepto.min.js"></script>
+</head>
+<body>
+    <h1>2017护考预测金卷</h1>
+    <p class="p1">护考通过神器</p>
+    <div class="title1"> <span></span>选择你要的产品服务</div>
+    <div class="choose">
+        <section class="content">
+            <div class="flex content-wrap">
+                <input type="radio" id="radio1" name="1" checked><span></span><label
+                    for="radio1">2017护考预测金卷（98元）</label>
+            </div>
+        </section>
+        <section class="content">
+            <div class="flex content-wrap">
+                <input type="radio" id="radio2" name="1"><span></span><label
+                    for="radio2">2017护考预测金卷+第二年免费学（98元+2元）</label>
+            </div>
+        </section>
+    </div>
+    <div class="title2"> <span></span>第二年免费学需完善信息</div>
+    <div class="blank">
+        <form>
+            <input type="text" placeholder="姓名" id="name">
+            <input type="text" placeholder="身份证号" id="idNumber">
+            <input type="text" placeholder="准考证号 ( 选填 )" id="testNumber">
+        </form>
+    </div>
+    <a href="javascript:;" class="submit">提交</a>
+<footer>
+    <p>免费咨询</p>
+    <div class="teacher">护考辅导老师: <span id="tName"></span>，辅导10000+学生顺利通过护考 </div>
+    <div class="info">QQ:<span id="qqNum"></span>电话:<em id="tPhone"></em></div>
+</footer>
+    <section class="modal-wrap"></section>
+    <section class="modal">
+        <p>提示</p>
+        <p class="bianliang"></p>
+        <p>确定</p>
+    </section>
+    <!--小菊花-->
+    <section class="loading-modal"></section>
+    <section class="loading"></section>
+</body>
+</html>
+<script>
+    $(function(){
+        /*验证身份证*/
+        function checkid(){
+            var idNumber = $('#idNumber').val();
+            if(!(/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(idNumber))){
+                return 0;
+            }else{
+                return 1;
+            }
+        };
+
+        /*验证姓名不能为空*/
+        function vername(){
+            var pw = $('#name').val();
+            if(pw.length){
+                return 1;
+            }else{
+                return 0;
+            }
+        };
+
+        /*是否选中商品*/
+        function checkproduct(){
+            var pro1 = $('#radio1').prop('checked');
+            var pro2 = $('#radio2').prop('checked');
+            if(pro1){
+                return "57d41438b33e449ba31ed9a667172e7b";
+            }else{
+                return "717c40631d974ae9b3443b7ab9607162";
+            }
+        };
+
+
+
+        var url = location.href;
+        var url1 = url.split("?")[1];
+        var url2 = url1.split("=")[1];
+
+        $.ajax({
+            url : 'http://192.168.0.76:8080/baoguo/getOrderInfo?userId='+url2+'',
+            type : 'post',
+            async : true,
+            dataType : 'json',
+            success : function(data){
+                console.log(data);
+               if(data.code == 200){
+                   $('#tName').html(data.value.name);
+                   $('#qqNum').html(data.value.qq[0]);
+                   $('#tPhone').html(data.value.telephone);
+                     if(data.value.isOrderProduct1){
+                         $('#radio1').prop('disabled','disabled');
+                         $('#radio1+span').css('background','gray');
+                         $('.choose .content').eq(0).css('text-decoration','line-through');
+                     };
+                     if(data.value.isOrderProduct2){
+                         $('#radio2').prop('disabled','disabled');
+                         $('#radio2+span').css('background','gray');
+                         $('.choose .content').eq(1).css('text-decoration','line-through');
+                     };
+               }
+            },
+            //小菊花
+            beforeSend: function(){
+                showloading();
+            },
+            complete:function(){
+                hideloading();
+            }
+        });
+
+        //提交
+        $('.submit').on("touchend",function(e){
+            e.stopPropagation();
+            if(!vername()){
+                showModal();
+                $('.bianliang').html("输入名字不能为空");
+                return;
+            };
+            if(!checkid()){
+                showModal();
+                $('.bianliang').html("身份证号码格式不对");
+                return;
+            }
+
+            var productId = checkproduct();
+            var nickName = $('#name').val();
+            var idCard = $("#idNumber").val();
+            var examCard = $("#testNumber").val();
+
+            $.ajax({
+                url : 'http://192.168.0.76:8080/baoguo/save?userId='+url2+'',
+                type : 'post',
+                async : true,
+                data : {nickName : nickName,idCard :idCard,examCard :examCard,productId:productId},
+                dataType : 'json',
+                success : function(data){
+                    console.log(data);
+                    if(data.code = 200){
+                        location.href = 'download.html?userId='+url2+'&productId='+productId+'';
+                    }
+                },
+                //小菊花
+                beforeSend: function(){
+                    showloading()
+                },
+                complete:function(){
+                    hideloading();
+                }
+            });
+        });
+
+
+        /*消除模态框*/
+        $(document).on('touchend',function(e){
+            hideModal();
+        });
+
+        //关闭模态框
+        function hideModal(){
+            $('.modal-wrap').css('display',"none");
+            $('.modal').css('display',"none");
+        };
+
+        //弹出模态框
+        function showModal(){
+            $('.modal-wrap').css('display',"block");
+            $('.modal').css('display',"block");
+        };
+
+
+        /*弹出小菊花*/
+        function showloading(){
+            $('.loading-modal').css('display',"block");
+            $('.loading').css('display',"block");
+        }
+
+        /*隐藏小菊花*/
+        function hideloading(){
+            $('.loading-modal').css('display',"none");
+            $('.loading').css('display',"none");
+        }
+    })
+</script>

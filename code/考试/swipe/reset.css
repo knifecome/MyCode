@@ -1,0 +1,85 @@
+*{box-sizing:border-box;}
+html{background-color:#ffffff;}
+
+
+a{text-decoration: none;
+    color: #ffffff;}
+img{vertical-align: top;}
+ul,li{list-style: none;}
+body,h1,h2,h3,h4,p,ul,li,ol,input,button,textarea{margin:0;padding: 0;font-style: normal;
+    font-weight: normal;}
+
+/*把英文写在前面，中文写后面*/
+body{font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei";
+    font-size: 16px;
+    background: #ffffff;
+     /*height: 2000px; */  /*编写页面时可用*/
+}
+i,em,strong{
+    font-weight: normal;
+    font-style: normal;
+}
+
+input,button,textarea{
+    border: 0 none;
+    outline: 0 none;
+    border-radius: 0;
+}
+a,
+input,
+button {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-appearance: none;
+}
+
+.flex{
+    display: flex;
+}
+
+.sb{
+    justify-content: space-between;
+}
+
+.jc{
+    justify-content: flex-end;
+}
+
+.sa{
+    justify-content: space-around;
+}
+
+.ac{
+    align-items: center;
+}
+
+.col{
+    flex-direction: column;
+}
+.fs{
+    align-items: flex-start;
+}
+
+
+/*公共添加类*/
+.mlr20{
+    margin: 0 .2rem;
+}
+
+.num1{
+    color: #6AC20B;
+}
+
+.num2{
+    color: red;
+}
+
+.mlr20{
+    margin: 0 .2rem;
+}
+
+
+.mb20{
+    margin-bottom: .2rem;
+}
+
+
